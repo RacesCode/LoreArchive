@@ -1,0 +1,10 @@
+<section class="md-list">
+  <h2>List of Available Notes</h2>
+  <ul>
+    {{ $files := .Site.RegularPages.ByTitle }}
+    {{ range $files }}
+      {{ $title := .Title | trimSuffix ".md" }}
+      <li><a href="{{ .Permalink }}">{{ $title }}</a></li>
+    {{ end }}
+  </ul>
+</section>
