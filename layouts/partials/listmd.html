@@ -2,7 +2,8 @@
   <h2>List of Available Notes</h2>
   <ul>
     {{ $files := .Site.RegularPages.ByTitle }}
-    {{ range $files }}
+    {{ $sortedFiles := $files | sortNumericAsc }}
+    {{ range $sortedFiles }}
       {{ $title := .Params.title }}
       {{ if not $title }}
         {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
