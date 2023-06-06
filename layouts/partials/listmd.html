@@ -13,7 +13,7 @@
     {{ end }}
     <script>
       // JavaScript code to sort the files numerically
-      var sortedFiles = {{ $sortedFiles | jsonify }};
+      var sortedFiles = JSON.parse('{{ $sortedFiles | jsonify }}');
       sortedFiles.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
   
       // JavaScript code to populate the list of hyperlinks
