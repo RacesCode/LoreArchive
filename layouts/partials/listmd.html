@@ -18,8 +18,11 @@
     </script>
     {{ range $sortedFiles }}
       {{ $fileName := printf "%s.md" . }}
-      {{ $file := $files.GetPage $fileName }}
-      <li><a href="{{ $file.Permalink }}">{{ . }}</a></li>
+      {{ range $files }}
+        {{ if eq .File.BaseFileName $fileName }}
+          <li><a href="{{ .Permalink }}">{{ .Params.title }}</a></li>
+        {{ end }}
+      {{ end }}
     {{ end }}
   </ul>
 </section>
