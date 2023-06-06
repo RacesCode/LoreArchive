@@ -1,36 +1,39 @@
 {{/* listmd.html */}}
+{{ $files := .Site.RegularPages.ByTitle }}
+{{ $sortedFiles := $files | sortNumericAsc }}
 <section class="md-list">
   <h2>List of Available Notes</h2>
   <ul>
-    {{ $files := .Site.RegularPages.ByTitle }}
-    {{ $sortedFiles := slice }}
-    {{ range $files }}
+    {{ range $sortedFiles }}
       {{ $title := .Params.title }}
       {{ if not $title }}
         {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
       {{ end }}
-      {{ $sortedFiles = $sortedFiles | append (dict "Title" $title "Permalink" .Permalink) }}
-    {{ end }}
-    {{ $sortedFiles = $sortedFiles | sortNumericAsc }}
-    {{ range $sortedFiles }}
-      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      <li><a href="{{ .Permalink }}">{{ $title }}</a></li>
     {{ end }}
   </ul>
 </section>
 
-{{/* Sorts the $sortedFiles slice numerically in ascending order */}}
+{{/* Sorts the files numerically in ascending order */}}
 {{ define "sortNumericAsc" }}
-  {{- $sorted := slice -}}
-  {{- $compare := until (len .) -}}
-  {{- range $compare }}
-    {{- $index := . }}
-    {{- range $compare }}
-      {{- $current := index . $index }}
-      {{- if lt $current.Title .Title }}
-        {{- $index = $ }}
-      {{- end }}
-    {{- end }}
-    {{- $sorted = $sorted | append (index . $index) }}
-  {{- end }}
-  {{- $sorted }}
+  {{ $sorted := slice }}
+  {{ range $files }}
+    {{ $title := .Params.title }}
+    {{ if not $title }}
+      {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
+    {{ end }}
+    {{ $sorted = $sorted | append (dict "Title" $title "Permalink" .Permalink) }}
+  {{ end }}
+  {{ range $i, $j := until (len $sorted) }}
+    {{ range $k, $file := after $sorted $j }}
+      {{ $titleA := $file.Title }}
+      {{ $titleB := index $sorted $i | getDict "Title" }}
+      {{ if lt $titleA $titleB }}
+        {{ $sorted = slice $sorted 0 $i (slice $sorted $k) }}
+      {{ else if eq $k (sub (len $sorted) 1) }}
+        {{ $sorted = slice $sorted 0 (add $i 1) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $sorted }}
 {{ end }}
