@@ -1,20 +1,34 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
-{{ partial "head.html" . }}
-
+<html>
+<head>
+  <title>Obsidian Vault Homepage</title>
+</head>
 <body>
-{{partial "search.html" .}}
-<div class="singlePage">
-    <!-- Begin actual content -->
-    {{partial "header.html" .}}
-    <article>
-        {{partial "toc.html" .}}
-        {{partial "textprocessing.html" . }}
-        {{if $.Site.Data.config.enableRecentNotes}}
-          {{partial "recent.html" . }}
-        {{end}}
-    </article>
-    {{partial "footerIndex.html" .}}
-</div>
+  <h1>List of Available .md Files</h1>
+  <ul id="fileList"></ul>
+
+  <script>
+    // Fetches the .md file list from the GitHub repository
+    fetch('https://api.github.com/repos/marktullius/RaceLoreVault/content')
+      .then(response => response.json())
+      .then(data => {
+        // Filters the response to include only .md files
+        const markdownFiles = data.filter(file => file.name.endsWith('.md'));
+
+        // Generates list items for each .md file
+        const fileList = document.getElementById('fileList');
+        markdownFiles.forEach(file => {
+          const listItem = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = file.html_url;
+          link.textContent = file.name;
+          listItem.appendChild(link);
+          fileList.appendChild(listItem);
+        });
+      })
+      .catch(error => {
+        console.error('Error retrieving file list:', error);
+      });
+  </script>
 </body>
 </html>
