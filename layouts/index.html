@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Obsidian Vault Homepage</title>
+  <title>Race's Lore Vault</title>
   <style>
     /* Dark mode styles */
     body {
@@ -10,7 +10,7 @@
     }
 
     h1 {
-      color: #ff7f50;
+      color: #ffffff;
     }
 
     ul {
@@ -23,7 +23,7 @@
     }
 
     a {
-      color: #ff7f50;
+      color: #ffffff;
       text-decoration: none;
     }
 
@@ -38,7 +38,7 @@
 
   <script>
     // Fetches the .md file list from the GitHub repository
-    fetch('https://api.github.com/repos/marktullius/RaceLoreVault/contents')
+    fetch('https://api.github.com/repos/marktullius/RaceLoreVault/contents/content')
       .then(response => response.json())
       .then(data => {
         // Filters the response to include only .md files
