@@ -1,9 +1,19 @@
 {{/* listmd.html */}}
-{{ $files := .Site.RegularPages.ByTitle }}
-{{ $sortedFiles := $files | sortNumericAsc }}
+{{ $sortNumericAsc := func(slice []string) []string }}
+  {{ range $i, $j := until (len slice) 1 -1 }}
+    {{ if gt (int (index slice $j)) (int (index slice $i)) }}
+      {{ $slice := slice }}
+      {{ index $slice $i }} {{ index $slice $j }} = {{ index $slice $j }} {{ index $slice $i }}
+    {{ end }}
+  {{ end }}
+  {{ . }}
+{{ end }}
+
 <section class="md-list">
   <h2>List of Available Notes</h2>
   <ul>
+    {{ $files := .Site.RegularPages.ByTitle }}
+    {{ $sortedFiles := $sortNumericAsc $files }}
     {{ range $sortedFiles }}
       {{ $title := .Params.title }}
       {{ if not $title }}
@@ -13,29 +23,3 @@
     {{ end }}
   </ul>
 </section>
-
-{{/* Sorts the files numerically in ascending order */}}
-{{ define "sortNumericAsc" }}
-  {{ $sorted := slice }}
-  {{ range $files }}
-    {{ $title := .Params.title }}
-    {{ if not $title }}
-      {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
-    {{ end }}
-    {{ $sorted = $sorted | append (dict "Title" $title "Permalink" .Permalink) }}
-  {{ end }}
-  {{ $sorted := $sorted | sortAsc }}
-  {{ range $sorted }}
-    {{ $title := .Title }}
-    {{ $permalink := .Permalink }}
-    <li><a href="{{ $permalink }}">{{ $title }}</a></li>
-  {{ end }}
-{{ end }}
-
-{{/* Sorts a slice of dictionaries by the "Title" field in ascending order */}}
-{{ define "sortAsc" }}
-  {{ $sorted := . | sort }}
-  {{ range $sorted }}
-    {{ . }}
-  {{ end }}
-{{ end }}
