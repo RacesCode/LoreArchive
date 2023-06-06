@@ -8,20 +8,7 @@
       {{ $title := replace .File.BaseFileName ".md" "" }}
       {{ $sortedFiles = $sortedFiles | append (dict "Title" $title "Permalink" .Permalink) }}
     {{ end }}
-    {{/* Custom sorting algorithm */}}
-    {{ $length := len $sortedFiles }}
-    {{ range $i, $ := until $length }}
-      {{ range $j, $ := until (sub $length (add $i 1)) }}
-        {{ $file1 := index $sortedFiles $j }}
-        {{ $file2 := index $sortedFiles (add $j 1) }}
-        {{ $num1 := toInt $file1.Title }}
-        {{ $num2 := toInt $file2.Title }}
-        {{ if gt $num2 $num1 }}
-          {{ $sortedFiles = $sortedFiles | set $j $file2 | set (add $j 1) $file1 }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-    {{/* End of sorting algorithm */}}
+    {{ $sortedFiles = partial "sortNumericAsc" $sortedFiles }}
     {{ range $sortedFiles }}
       <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
