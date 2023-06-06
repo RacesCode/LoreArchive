@@ -1,8 +1,11 @@
+{{/* Define the custom sorting function */}}
+{{ $sortNumericAsc := (lambda (seq) (slice.Sort seq (lambda (a, b) (< (int a.File.BaseFileName) (int b.File.BaseFileName)))) }}
+
 <section class="md-list">
   <h2>List of Available Notes</h2>
   <ul>
     {{ $files := .Site.RegularPages.ByTitle }}
-    {{ $sortedFiles := $files | sortNumericAsc }}
+    {{ $sortedFiles := $sortNumericAsc $files }}
     {{ range $sortedFiles }}
       {{ $title := .Params.title }}
       {{ if not $title }}
