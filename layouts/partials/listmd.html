@@ -4,6 +4,9 @@
     {{ $files := .Site.RegularPages.ByTitle }}
     {{ range $files }}
       {{ $title := .Params.title }}
+      {{ if not $title }}
+        {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
+      {{ end }}
       <li><a href="{{ .Permalink }}">{{ $title }}</a></li>
     {{ end }}
   </ul>
