@@ -1,10 +1,9 @@
 {{/* listmd.html */}}
-{{ $files := .Site.RegularPages.ByTitle }}
-{{ $sortedFiles := $files | sortNumericAsc }}
 <section class="md-list">
   <h2>List of Available Notes</h2>
   <ul>
-    {{ range $sortedFiles }}
+    {{ $files := .Site.RegularPages.ByTitle }}
+    {{ range $files }}
       {{ $title := .Params.title }}
       {{ if not $title }}
         {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
@@ -13,27 +12,3 @@
     {{ end }}
   </ul>
 </section>
-
-{{/* Sorts the files numerically in ascending order */}}
-{{ define "sortNumericAsc" }}
-  {{ $sorted := slice }}
-  {{ range $files }}
-    {{ $title := .Params.title }}
-    {{ if not $title }}
-      {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
-    {{ end }}
-    {{ $sorted = $sorted | append (dict "Title" $title "Permalink" .Permalink) }}
-  {{ end }}
-  {{ range $i, $j := until (len $sorted) }}
-    {{ range $k, $file := after $sorted $j }}
-      {{ $titleA := $file.Title }}
-      {{ $titleB := index $sorted $i | getDict "Title" }}
-      {{ if lt $titleA $titleB }}
-        {{ $sorted = slice $sorted 0 $i (slice $sorted $k) }}
-      {{ else if eq $k (sub (len $sorted) 1) }}
-        {{ $sorted = slice $sorted 0 (add $i 1) }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-  {{ $sorted }}
-{{ end }}
