@@ -9,7 +9,6 @@
       {{ if not $title }}
         {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
       {{ end }}
-      {{ $titleInt := $title | int }}
       <li><a href="{{ .Permalink }}">{{ $title }}</a></li>
     {{ end }}
   </ul>
@@ -23,19 +22,20 @@
     {{ if not $title }}
       {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
     {{ end }}
-    {{ $titleInt := $title | int }}
-    {{ $sorted = $sorted | append (dict "Title" $titleInt "Permalink" .Permalink) }}
+    {{ $sorted = $sorted | append (dict "Title" $title "Permalink" .Permalink) }}
   {{ end }}
-  {{ range $i, $j := until (len $sorted) }}
-    {{ range $k, $file := after $sorted $j }}
-      {{ $titleA := $file.Title }}
-      {{ $titleB := index $sorted $i | getDict "Title" }}
-      {{ if lt $titleA $titleB }}
-        {{ $sorted = slice $sorted 0 $i (slice $sorted $k) }}
-      {{ else if eq $k (sub (len $sorted) 1) }}
-        {{ $sorted = slice $sorted 0 (add $i 1) }}
-      {{ end }}
-    {{ end }}
+  {{ $sorted := $sorted | sortAsc }}
+  {{ range $sorted }}
+    {{ $title := .Title }}
+    {{ $permalink := .Permalink }}
+    <li><a href="{{ $permalink }}">{{ $title }}</a></li>
   {{ end }}
-  {{ $sorted }}
+{{ end }}
+
+{{/* Sorts a slice of dictionaries by the "Title" field in ascending order */}}
+{{ define "sortAsc" }}
+  {{ $sorted := . | sort }}
+  {{ range $sorted }}
+    {{ . }}
+  {{ end }}
 {{ end }}
