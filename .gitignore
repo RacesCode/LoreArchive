@@ -3,6 +3,9 @@ public
 resources
 .idea
 content/.obsidian
+content/.vscode
 assets/indices/linkIndex.json
 assets/indices/contentIndex.json
 linkmap
+content/.py
+content/.json
