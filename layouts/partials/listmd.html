@@ -17,8 +17,7 @@
       sortedFiles.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
     </script>
     {{ range $sortedFiles }}
-      {{ $file := index $files (add . ".md") }}
-      <li><a href="{{ $file.Permalink }}">{{ . }}</a></li>
+      <li><a href="{{ .Permalink }}">{{ $title }}</a></li>
     {{ end }}
   </ul>
 </section>
