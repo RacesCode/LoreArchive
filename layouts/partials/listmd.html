@@ -3,7 +3,7 @@
   <ul>
     {{ $files := .Site.RegularPages.ByTitle }}
     {{ range $files }}
-      {{ $title := replace .Title ".md" "" }}
+      {{ $title := .Params.title }}
       <li><a href="{{ .Permalink }}">{{ $title }}</a></li>
     {{ end }}
   </ul>
