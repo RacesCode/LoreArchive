@@ -11,7 +11,7 @@
       {{ end }}
       {{ $sortedFiles = $sortedFiles | append (dict "Title" $title "Permalink" .Permalink) }}
     {{ end }}
-    {{ $sortedFiles = $sortedFiles | $sortNumericAsc }}
+    {{ $sortedFiles = $sortedFiles | sortNumericAsc }}
     {{ range $sortedFiles }}
       <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
@@ -19,7 +19,7 @@
 </section>
 
 {{/* Sorts the $sortedFiles slice numerically in ascending order */}}
-{{ define "$sortNumericAsc" }}
+{{ define "sortNumericAsc" }}
   {{- $sorted := slice -}}
   {{- $compare := until (len .) -}}
   {{- range $compare }}
