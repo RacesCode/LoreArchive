@@ -1,7 +1,8 @@
 {{/* listmd.html */}}
 <section class="md-list">
   <h2>List of Available Notes</h2>
-  <ul id="noteList">
+  <ul id="noteList"></ul>
+  <ul>
     {{ $files := .Site.RegularPages.ByTitle }}
     {{ $sortedFiles := slice }}
     {{ range $files }}
