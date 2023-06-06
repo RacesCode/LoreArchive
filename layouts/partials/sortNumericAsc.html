@@ -1,7 +1,0 @@
-{{/* sortNumericAsc.html */}}
-{{- $files := . -}}
-{{- range $index, $element := $files -}}
-  {{- $files.Set $index (dict "File" $element.File "SortValue" (int (replaceRE "\\D" "" $element.File.BaseFileName))) -}}
-{{- end -}}
-{{- $files.Slice.SortByField "SortValue" -}}
-{{- $files -}}
