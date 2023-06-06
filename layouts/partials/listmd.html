@@ -3,12 +3,34 @@
   <h2>List of Available Notes</h2>
   <ul>
     {{ $files := .Site.RegularPages.ByTitle }}
+    {{ $sortedFiles := slice }}
     {{ range $files }}
       {{ $title := .Params.title }}
       {{ if not $title }}
         {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
       {{ end }}
-      <li><a href="{{ .Permalink }}">{{ $title }}</a></li>
+      {{ $sortedFiles = $sortedFiles | append (dict "Title" $title "Permalink" .Permalink) }}
+    {{ end }}
+    {{ $sortedFiles = $sortedFiles | $sortNumericAsc }}
+    {{ range $sortedFiles }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
 </section>
+
+{{/* Sorts the $sortedFiles slice numerically in ascending order */}}
+{{ define "$sortNumericAsc" }}
+  {{- $sorted := slice -}}
+  {{- $compare := until (len .) -}}
+  {{- range $compare }}
+    {{- $index := . }}
+    {{- range $compare }}
+      {{- $current := index . $index }}
+      {{- if lt $current.Title .Title }}
+        {{- $index = $ }}
+      {{- end }}
+    {{- end }}
+    {{- $sorted = $sorted | append (index . $index) }}
+  {{- end }}
+  {{- $sorted }}
+{{ end }}
