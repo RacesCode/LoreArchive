@@ -1,31 +1,28 @@
 {{/* listmd.html */}}
 <section class="md-list">
   <h2>List of Available Notes</h2>
-  <ul>
-    {{ $files := .Site.RegularPages.ByTitle }}
-    {{ $sortedFiles := slice }}
-    {{ range $files }}
-      {{ $title := .Params.title }}
-      {{ if not $title }}
-        {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
-      {{ end }}
-      {{ $sortedFiles = $sortedFiles | append $title }}
-    {{ end }}
-    <script>
-      // JavaScript code to sort the files numerically
-      var sortedFiles = JSON.parse('{{ $sortedFiles | jsonify }}');
-      sortedFiles.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
-      for (var i = 0; i < sortedFiles.length; i++) {
-        var fileName = sortedFiles[i] + '.md';
-        var found = false;
-        var files = JSON.parse('{{ $files | jsonify }}');
-        for (var j = 0; j < files.length; j++) {
-          if (!found && files[j].File.BaseFileName === fileName) {
-            found = true;
-            document.write('<li><a href="' + files[j].Permalink + '">' + files[j].Params.title + '</a></li>');
-          }
-        }
-      }
-    </script>
-  </ul>
+  <ul id="noteList"></ul>
 </section>
+
+<script>
+  // JavaScript code to sort the files numerically
+  var sortedFiles = JSON.parse('{{ $sortedFiles | jsonify }}');
+  sortedFiles.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+  var noteList = document.getElementById('noteList');
+  var files = {{ $files | jsonify }};
+  for (var i = 0; i < sortedFiles.length; i++) {
+    var fileName = sortedFiles[i] + '.md';
+    var found = false;
+    for (var j = 0; j < files.length; j++) {
+      if (!found && files[j].File.BaseFileName === fileName) {
+        found = true;
+        var listItem = document.createElement('li');
+        var link = document.createElement('a');
+        link.href = files[j].Permalink;
+        link.textContent = files[j].Params.title;
+        listItem.appendChild(link);
+        noteList.appendChild(listItem);
+      }
+    }
+  }
+</script>
