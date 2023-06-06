@@ -2,6 +2,35 @@
 <html>
 <head>
   <title>Obsidian Vault Homepage</title>
+  <style>
+    /* Dark mode styles */
+    body {
+      background-color: #222;
+      color: #fff;
+    }
+
+    h1 {
+      color: #ff7f50;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #ff7f50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <h1>List of Available .md Files</h1>
@@ -9,7 +38,7 @@
 
   <script>
     // Fetches the .md file list from the GitHub repository
-    fetch('https://api.github.com/repos/marktullius/RaceLoreVault/contents/content')
+    fetch('https://api.github.com/repos/marktullius/RaceLoreVault/contents')
       .then(response => response.json())
       .then(data => {
         // Filters the response to include only .md files
