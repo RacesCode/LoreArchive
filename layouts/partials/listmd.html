@@ -3,7 +3,7 @@
   <ul>
     {{ $files := .Site.RegularPages.ByTitle }}
     {{ range $files }}
-      {{ $title := .Title | trimSuffix ".md" }}
+      {{ $title := replace .Title ".md" "" }}
       <li><a href="{{ .Permalink }}">{{ $title }}</a></li>
     {{ end }}
   </ul>
