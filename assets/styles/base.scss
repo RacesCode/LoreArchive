@@ -264,9 +264,22 @@ sup > a {
 #entry-title {
   margin: 0;
   & > a {
-    font-family: var(--font-header);
+    font-family: var(--font-body);
     font-size: 22px;
     line-height: 10%;
+  }
+}
+
+#graph-container {
+  border: var(--outlinegray) 1px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  min-height: 250px;
+  margin: 0.5em 0;
+
+  & > svg {
+    margin-bottom: -5px;
+
   }
 }
 
@@ -344,18 +357,18 @@ hr {
       }
     }
   }
+}
 
-  & #graph-container {
-    border: var(--outlinegray) 1px solid;
-    border-radius: 5px;
-    box-sizing: border-box;
-    min-height: 250px;
-    margin: 0.5em 0;
+& #preview-container {
+  border: var(--outlinegray) 1px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  min-height: 250px;
+  margin: 0.5em 0;
 
-    & > svg {
-      margin-bottom: -5px;
+  & > svg {
+    margin-bottom: -5px;
 
-    }
   }
 }
 
