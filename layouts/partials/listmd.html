@@ -5,5 +5,5 @@
     {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
   {{ end }}
   {{ $content := .Content | plainify | replaceRE "\\[\\[(.*?)\\]\\]" "" | replaceRE "[\\[\\]*_#`<>]" "" }}
-  <li><a href="{{ .Permalink }}">{{ $title }}</a> - {{ substr (printf "%s" $content | safeHTML) 0 50 }}...</li>
+  <li><a href="{{ .Permalink }}">{{ $title }}</a> - {{ substr (printf "%s" $content | safeHTML) 12 50 }}...</li>
 {{ end }}
