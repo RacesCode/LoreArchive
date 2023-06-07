@@ -24,8 +24,10 @@
         var found = false;
         var files = JSON.parse('{{ $files | jsonify }}');
         for (var j = 0; j < files.length; j++) {
+          console.log('Comparing:', files[j].File.BaseFileName, 'and', fileName);
           if (!found && files[j].File.BaseFileName === fileName) {
             found = true;
+            console.log('File found:', files[j].File.BaseFileName);
             var listItem = document.createElement("li");
             var link = document.createElement("a");
             link.href = files[j].Permalink;
