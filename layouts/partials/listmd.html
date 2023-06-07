@@ -25,6 +25,7 @@
         var files = JSON.parse('{{ $files | jsonify }}');
         for (var j = 0; j < files.length; j++) {
           var filePath = files[j].RelPermalink;
+          concole.console.log(fielpath);
           var regex = /\/([^/]+)\.md$/; // Regex to extract the file name
           var match = regex.exec(filePath);
           if (match && match[1] === fileName) {
