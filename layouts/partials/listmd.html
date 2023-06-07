@@ -7,8 +7,8 @@
       {{ if not $title }}
         {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
       {{ end }}
-      {{ $content := .Content }}
-      <li><a href="{{ .Permalink }}">{{ $title }}</a> - {{ substr $content 42 50 }}...</li>
+      {{ $content := .Content | replaceRE "\\[\\[(.*?)\\]\\]" "" | replaceRE "[\\[\\]*_#`<>]" "" | replaceRE "<[^>]+>" "" }}
+      <li><a href="{{ .Permalink }}">{{ $title }}</a> - {{ substr $content 12 50 }}...</li>
     {{ end }}
   </ul>
 </section>
