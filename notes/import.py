@@ -293,7 +293,7 @@ count = 1
 for messages in lore["messages"]:
   content = messages["content"]
   if ";" in content or messages["id"] in oldLore:
-    filename = str(count) + ".md"
+    filename = str(count).zfill(4) + ".md"
     with open(filename, "w", encoding="utf-8") as f:
       timestamp = messages["timestamp"][:10]
       content = process_content(content)
