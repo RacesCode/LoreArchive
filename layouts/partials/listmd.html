@@ -6,5 +6,5 @@
   {{ end }}
   {{ $content := .Content | plainify | replaceRE "[\\[\\]*_#`<>]" "" | replaceRE "&rsquo;" "'" | replaceRE "&ldquo;" "\"" }}
   {{ $content := printf "%s" $content | safeHTML }}
-  <h2 id="entry-title"><li><a href="{{ .Permalink }}">{{ $title }}</a><br>&emsp;&emsp;{{ substr $content 12 50 }}...</li><br></h2>
+  <h2 id="entry-title"><li><a href="{{ .Permalink }}">{{ $title }}</a></h2><br>&emsp;&emsp;{{ substr $content 12 50 }}...</li><br>
 {{ end }}
