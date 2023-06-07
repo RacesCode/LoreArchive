@@ -16,25 +16,26 @@
       // JavaScript code to sort the files numerically
       var sortedFiles = JSON.parse('{{ $sortedFiles | jsonify }}');
       sortedFiles.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
-  
+
       // JavaScript code to populate the list of hyperlinks
       var noteList = document.getElementById("noteList");
       for (var i = 0; i < sortedFiles.length; i++) {
-        console.log(sortedFiles[i]);
         var fileName = sortedFiles[i] + '.md';
         var found = false;
         var files = JSON.parse('{{ $files | jsonify }}');
         for (var j = 0; j < files.length; j++) {
-          console.log('Comparing:', files[j].File.BaseFileNameWithoutExtension, 'and', fileName);
-          if (!found && files[j].File.BaseFileNameWithoutExtension === fileName) {
+          var filePath = files[j].RelPermalink;
+          var regex = /\/([^/]+)\.md$/; // Regex to extract the file name
+          var match = regex.exec(filePath);
+          if (match && match[1] === fileName) {
             found = true;
-            console.log('File found:', files[j].File.BaseFileNameWithoutExtension);
             var listItem = document.createElement("li");
             var link = document.createElement("a");
             link.href = files[j].Permalink;
             link.textContent = files[j].Params.title;
             listItem.appendChild(link);
             noteList.appendChild(listItem);
+            break; // Exit the inner loop since the file is found
           }
         }
       }
