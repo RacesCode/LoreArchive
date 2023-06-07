@@ -8,12 +8,16 @@
   {{ $content := printf "%s" $content | safeHTML }}
   <div id="preview-container">
     <h2 id="entry-title">
-      <li>
-        <a href="{{ .Permalink }}">{{ $title }}</a>
-      </li>
+        <a href="{{ .Permalink }}">
+          {{ $title }}
+        </a>
+        <p id="dateFrmt">
+          {{ substr $content 0 10 }}
+        </p>
+        <br>
     </h2>
     <p>
-      &emsp;&emsp;{{ $content }}
+      {{ $content }}
       <br>
     </p>
   </div>
