@@ -8,9 +8,9 @@
     <!-- Begin actual content -->
     {{partial "header.html" .}}
     <article>
-        {{partial "listmd.html" .}}
         {{partial "toc.html" .}}
         {{partial "textprocessing.html" . }}
+        {{partial "listmd.html" .}}
         {{if $.Site.Data.config.enableRecentNotes}}
           {{partial "recent.html" . }}
         {{end}}
