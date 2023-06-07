@@ -9,7 +9,7 @@
 <script defer src=https://marktullius.github.io/RaceLoreVault/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
 <script defer src=https://marktullius.github.io/RaceLoreVault/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
 <script defer src=https://marktullius.github.io/RaceLoreVault/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
-<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://marktullius.github.io/RaceLoreVault/",fetchData=Promise.all([fetch("https://marktullius.github.io/RaceLoreVault/indices/linkIndex.25909971558da27963046e727c64fd01.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://marktullius.github.io/RaceLoreVault/indices/contentIndex.79c8287c13f805a4e6f67b636174a1f7.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://marktullius.github.io/RaceLoreVault",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://marktullius.github.io/RaceLoreVault",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()});function a(n){const e=n.target,t=e.className.split(" "),s=t.includes("broken"),o=t.includes("internal-link");plausible("Link Click",{props:{href:e.href,broken:s,internal:o,graph:!1}})}const r=document.querySelectorAll("a");for(link of r)link.className.includes("root-title")&&link.addEventListener("click",a,{once:!0})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://marktullius.github.io/RaceLoreVault/",fetchData=Promise.all([fetch("https://marktullius.github.io/RaceLoreVault/indices/linkIndex.25909971558da27963046e727c64fd01.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://marktullius.github.io/RaceLoreVault/indices/contentIndex.4aa6526e98f97d246092b6a5a78b0960.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://marktullius.github.io/RaceLoreVault",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://marktullius.github.io/RaceLoreVault",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()});function a(n){const e=n.target,t=e.className.split(" "),s=t.includes("broken"),o=t.includes("internal-link");plausible("Link Click",{props:{href:e.href,broken:s,internal:o,graph:!1}})}const r=document.querySelectorAll("a");for(link of r)link.className.includes("root-title")&&link.addEventListener("click",a,{once:!0})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
     import { attachSPARouting } from "https:\/\/marktullius.github.io\/RaceLoreVault\/js\/router.d6fe6bd821db9ea97f9aeefae814d8e7.min.js"
     attachSPARouting(init, render)
   </script><script defer data-domain=marktullius.github.io/RaceLoreVault src=https://plausible.io/js/script.js></script>
@@ -18,386 +18,748 @@
 <label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><p>An online archive of lore alerts written by
 <a href=https://twitch.tv/race rel=noopener>Race</a></p><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0001/>0001</a>
 -
-2021-01-14</l><div>Khri held the orb in her right hand, the scepter in her left. A choice was to be made. Choosing one...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0002/>0002</a>
+2021-01-14
 -
-2021-01-18</l><div>The days after Windfall&amp;rsquo;s destruction were quiet. The people that were left alive stayed in w...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0003/>0003</a>
+Khri held the orb in her right hand, the scepter in her left. A choice was to be made. Choosing one...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0002/>0002</a>
 -
-2021-01-29</l><div>among the stars humanity had spread out to claim new homes. a region of the galaxy known as Ysimji....</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0004/>0004</a>
+2021-01-18
 -
-2021-01-31</l><div>Khri dropped the orb. She felt as if the magnitude of that action would cause her to feel more, to ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0005/>0005</a>
+The days after Windfall&amp;rsquo;s destruction were quiet. The people that were left alive stayed in w...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0003/>0003</a>
 -
-2021-02-01</l><div>“We’re preparing for war.”
-“With the gods?! You’re fucking delusional if you think anything but our...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0006/>0006</a>
+2021-01-29
 -
-2021-02-18</l><div>The forests seemed calm. Roln had been watching the trees silently for three days. He sat in his ca...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0007/>0007</a>
+among the stars humanity had spread out to claim new homes. a region of the galaxy known as Ysimji....</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0004/>0004</a>
 -
-2021-02-19</l><div>another chapter remains hidden behind the folds of time. The veil takes, it does not give
-...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0008/>0008</a>
+2021-01-31
 -
-2021-02-20</l><div>Aarand Vullan shuffled in his chair. Why did this village insist on making chairs out of metals? Wa...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0009/>0009</a>
+Khri dropped the orb. She felt as if the magnitude of that action would cause her to feel more, to ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0005/>0005</a>
 -
-2021-02-24</l><div>Roln’s hands, full of blood, still gripped the pouch with the orb inside. He wouldn’t let this get ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0010/>0010</a>
+2021-02-01
 -
-2021-03-04</l><div>The word spread like wildfire throughout the lands, a god was among them. A self proclaimed deity h...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0011/>0011</a>
+“We’re preparing for war.”
+“With the gods?! You’re fucking delusional if you think anything but our...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0006/>0006</a>
 -
-2021-03-09</l><div>A dream is infinite. Dreaming is a tool given to us. And it is infinite. Novice users assume dreami...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0012/>0012</a>
+2021-02-18
 -
-2021-05-10</l><div>Whatever was held in the fortress before him was radiating with indescribable power, the moment he ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0013/>0013</a>
+The forests seemed calm. Roln had been watching the trees silently for three days. He sat in his ca...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0007/>0007</a>
 -
-2021-05-16</l><div>through the fields and valleys, through the homes and halls, words of a champion&amp;rsquo;s arrival ha...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0014/>0014</a>
+2021-02-19
 -
-2021-06-03</l><div>“You are banished.”
-There was only the briefest of silences before the crowd exploded with shouting...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0015/>0015</a>
+another chapter remains hidden behind the folds of time. The veil takes, it does not give
+...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0008/>0008</a>
 -
-2021-06-04</l><div>The Universal Court had decided, and that was that. The manner of Kyr’s exile was thought to be com...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0016/>0016</a>
+2021-02-20
 -
-2021-06-09</l><div>At the sound of the sirens everything stopped. The snow falling froze in air, the animals became st...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0017/>0017</a>
+Aarand Vullan shuffled in his chair. Why did this village insist on making chairs out of metals? Wa...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0009/>0009</a>
 -
-2021-06-24</l><div>Petyl awoke with a jump, she must’ve dreamt something that scared her but she couldn’t remember. Sh...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0018/>0018</a>
+2021-02-24
 -
-2021-06-26</l><div>Mirh stared at the wall blankly, he didn’t know how long he had been doing so. They say when your w...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0019/>0019</a>
+Roln’s hands, full of blood, still gripped the pouch with the orb inside. He wouldn’t let this get ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0010/>0010</a>
 -
-2021-06-29</l><div>A war had begun. Like most historical conflicts this beginning was the result of something very sim...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0020/>0020</a>
+2021-03-04
 -
-2021-06-30</l><div>Ryn carefully unwrapped her small leather pouch, pulling out a small stale piece of bread. Three pi...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0021/>0021</a>
+The word spread like wildfire throughout the lands, a god was among them. A self proclaimed deity h...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0011/>0011</a>
 -
-2021-07-02</l><div>Amidst hazy vision a couple could be seen holding each other in the dim light and warmth of a lowly...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0022/>0022</a>
+2021-03-09
 -
-2021-07-07</l><div>Baz lit a candle in the darkness of his room, the soft light now washing over the parchment that sa...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0023/>0023</a>
+A dream is infinite. Dreaming is a tool given to us. And it is infinite. Novice users assume dreami...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0012/>0012</a>
 -
-2021-07-12</l><div>Sitting near a fire in the middle of the night was peaceful, the embers flying out and meeting with...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0024/>0024</a>
+2021-05-10
 -
-2021-09-04</l><div>In the event of multiversal isolation please refer to the manual, section 4.c.9. In the event of a ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0025/>0025</a>
+Whatever was held in the fortress before him was radiating with indescribable power, the moment he ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0013/>0013</a>
 -
-2021-09-05</l><div>&amp;ldquo;Oh Visia, what have I done to forsaken you? I have been an obedient servant under your watch...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0026/>0026</a>
+2021-05-16
 -
-2021-09-07</l><div>Jack sat down at his table, carefully setting down the ornate box. It was lined with chrome metals ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0027/>0027</a>
+through the fields and valleys, through the homes and halls, words of a champion&amp;rsquo;s arrival ha...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0014/>0014</a>
 -
-2021-09-10</l><div>The power H&amp;rsquo;rol held in his fingers was terrifying. Reality bent to his will all with a simpl...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0028/>0028</a>
+2021-06-03
 -
-2021-09-17</l><div>The planet’s glow was bright and fluorescent against the dark nebulous sky, a magnificent view none...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0029/>0029</a>
+“You are banished.”
+There was only the briefest of silences before the crowd exploded with shouting...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0015/>0015</a>
 -
-2021-09-18</l><div>The ship’s screens blared red in unison. The ship’s onboard computer blaring static and gibberish o...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0030/>0030</a>
+2021-06-04
 -
-2021-09-19</l><div>The captain had never run so fast in his life, his suit flashlight barely allowing the way ahead of...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0031/>0031</a>
+The Universal Court had decided, and that was that. The manner of Kyr’s exile was thought to be com...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0016/>0016</a>
 -
-2021-09-21</l><div>The captain ran over to the backup battery station, fumbling with the switches and controls, his su...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0032/>0032</a>
+2021-06-09
 -
-2021-09-23</l><div>“Excellent, Eri, give me time stamps on each distress signal along with the approximate origin of e...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0033/>0033</a>
+At the sound of the sirens everything stopped. The snow falling froze in air, the animals became st...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0017/>0017</a>
 -
-2021-09-25</l><div>Don opened the massive gate door to the cargo bay, a decently expansive space, slowly illuminated b...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0034/>0034</a>
+2021-06-24
 -
-2021-10-01</l><div>The lights were on, the subsystems seemed to have activated but the captain wasn’t quite sure how m...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0035/>0035</a>
+Petyl awoke with a jump, she must’ve dreamt something that scared her but she couldn’t remember. Sh...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0018/>0018</a>
 -
-2021-10-05</l><div>Announcement today, also my internet was down for 3 hours so thats why im late :)
-My understanding ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0036/>0036</a>
+2021-06-26
 -
-2021-10-06</l><div>I have met a traveller within the Outer Edge, the same as I. They told me to call them Xeno in my l...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0037/>0037</a>
+Mirh stared at the wall blankly, he didn’t know how long he had been doing so. They say when your w...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0019/>0019</a>
 -
-2021-10-07</l><div>Xeno is dangerous
-...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0038/>0038</a>
+2021-06-29
 -
-2021-10-09</l><div>The Outer Edge feels like swimming through a realm of consciousness as an ethereal soul. But someho...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0039/>0039</a>
+A war had begun. Like most historical conflicts this beginning was the result of something very sim...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0020/>0020</a>
 -
-2021-10-13</l><div>The lights shut off. Fuck. Don fumbled trying to find the flashlight on his suit, the thudding foot...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0040/>0040</a>
+2021-06-30
 -
-2021-10-15</l><div>Along the path that humanity travelled, a bend, a branching road was chosen. It was a mistake. The ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0041/>0041</a>
+Ryn carefully unwrapped her small leather pouch, pulling out a small stale piece of bread. Three pi...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0021/>0021</a>
 -
-2021-10-22</l><div>I&amp;rsquo;ve been wandering for an unknown amount of time, it is not a concept in this place. I don&r...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0042/>0042</a>
+2021-07-02
 -
-2021-10-23</l><div>I chose a portal. The souls rejoicing gave me hope that I would go to a good place. My ethereal bei...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0043/>0043</a>
+Amidst hazy vision a couple could be seen holding each other in the dim light and warmth of a lowly...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0022/>0022</a>
 -
-2021-11-16</l><div>The road ahead seemed endless. It wasn’t intricate in its design nor was it beautiful, but it was a...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0044/>0044</a>
+2021-07-07
 -
-2021-12-03</l><div>Every piece of metal here was rusted and decayed. Cel stepped past the heaps of unusable blades and...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0045/>0045</a>
+Baz lit a candle in the darkness of his room, the soft light now washing over the parchment that sa...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0023/>0023</a>
 -
-2021-12-05</l><div>Cel noticed the statues overhead as they climbed the steps, the towering ornate stone effigies of a...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0046/>0046</a>
+2021-07-12
 -
-2021-12-07</l><div>Ki didn’t show any emotion, if anything on the surface he seemed more at ease. He heard Cel’s fist ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0047/>0047</a>
+Sitting near a fire in the middle of the night was peaceful, the embers flying out and meeting with...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0024/>0024</a>
 -
-2021-12-08</l><div>“How much longer do you think until we reach the summit?” Cel was almost out of breath as she spoke...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0048/>0048</a>
+2021-09-04
 -
-2021-12-09</l><div>Six seconds.
+In the event of multiversal isolation please refer to the manual, section 4.c.9. In the event of a ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0025/>0025</a>
+-
+2021-09-05
+-
+&amp;ldquo;Oh Visia, what have I done to forsaken you? I have been an obedient servant under your watch...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0026/>0026</a>
+-
+2021-09-07
+-
+Jack sat down at his table, carefully setting down the ornate box. It was lined with chrome metals ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0027/>0027</a>
+-
+2021-09-10
+-
+The power H&amp;rsquo;rol held in his fingers was terrifying. Reality bent to his will all with a simpl...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0028/>0028</a>
+-
+2021-09-17
+-
+The planet’s glow was bright and fluorescent against the dark nebulous sky, a magnificent view none...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0029/>0029</a>
+-
+2021-09-18
+-
+The ship’s screens blared red in unison. The ship’s onboard computer blaring static and gibberish o...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0030/>0030</a>
+-
+2021-09-19
+-
+The captain had never run so fast in his life, his suit flashlight barely allowing the way ahead of...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0031/>0031</a>
+-
+2021-09-21
+-
+The captain ran over to the backup battery station, fumbling with the switches and controls, his su...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0032/>0032</a>
+-
+2021-09-23
+-
+“Excellent, Eri, give me time stamps on each distress signal along with the approximate origin of e...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0033/>0033</a>
+-
+2021-09-25
+-
+Don opened the massive gate door to the cargo bay, a decently expansive space, slowly illuminated b...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0034/>0034</a>
+-
+2021-10-01
+-
+The lights were on, the subsystems seemed to have activated but the captain wasn’t quite sure how m...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0035/>0035</a>
+-
+2021-10-05
+-
+Announcement today, also my internet was down for 3 hours so thats why im late :)
+My understanding ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0036/>0036</a>
+-
+2021-10-06
+-
+I have met a traveller within the Outer Edge, the same as I. They told me to call them Xeno in my l...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0037/>0037</a>
+-
+2021-10-07
+-
+Xeno is dangerous
+...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0038/>0038</a>
+-
+2021-10-09
+-
+The Outer Edge feels like swimming through a realm of consciousness as an ethereal soul. But someho...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0039/>0039</a>
+-
+2021-10-13
+-
+The lights shut off. Fuck. Don fumbled trying to find the flashlight on his suit, the thudding foot...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0040/>0040</a>
+-
+2021-10-15
+-
+Along the path that humanity travelled, a bend, a branching road was chosen. It was a mistake. The ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0041/>0041</a>
+-
+2021-10-22
+-
+I&amp;rsquo;ve been wandering for an unknown amount of time, it is not a concept in this place. I don&r...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0042/>0042</a>
+-
+2021-10-23
+-
+I chose a portal. The souls rejoicing gave me hope that I would go to a good place. My ethereal bei...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0043/>0043</a>
+-
+2021-11-16
+-
+The road ahead seemed endless. It wasn’t intricate in its design nor was it beautiful, but it was a...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0044/>0044</a>
+-
+2021-12-03
+-
+Every piece of metal here was rusted and decayed. Cel stepped past the heaps of unusable blades and...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0045/>0045</a>
+-
+2021-12-05
+-
+Cel noticed the statues overhead as they climbed the steps, the towering ornate stone effigies of a...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0046/>0046</a>
+-
+2021-12-07
+-
+Ki didn’t show any emotion, if anything on the surface he seemed more at ease. He heard Cel’s fist ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0047/>0047</a>
+-
+2021-12-08
+-
+“How much longer do you think until we reach the summit?” Cel was almost out of breath as she spoke...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0048/>0048</a>
+-
+2021-12-09
+-
+Six seconds.
 Ki stopped abruptly, turning around to face Cel.
 Two seconds.
-Gnawood arrows were spec...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0049/>0049</a>
+Gnawood arrows were spec...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0049/>0049</a>
 -
-2021-12-09</l><div>Cel felt fear that was only describable by someone who understood death. Overwhelming every part of...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0050/>0050</a>
+2021-12-09
 -
-2021-12-13</l><div>I have arrived in the correct timeline, the right universe.. I hope. Not that it matters anymore. B...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0051/>0051</a>
+Cel felt fear that was only describable by someone who understood death. Overwhelming every part of...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0050/>0050</a>
 -
-2021-12-14</l><div>Memories have been imparted into my soul, physical memories of lives past and present. I can feel t...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0052/>0052</a>
+2021-12-13
 -
-2021-12-17</l><div>Does existing between two places make me less whole? Does existing apart from the Outer Edge weaken...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0053/>0053</a>
+I have arrived in the correct timeline, the right universe.. I hope. Not that it matters anymore. B...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0051/>0051</a>
 -
-2021-12-18</l><div>The room glowed a soft blue light. The walls were stone but felt hazy and ethereal, it felt otherwo...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0054/>0054</a>
+2021-12-14
 -
-2021-12-23</l><div>The orb cracked when skin touched it, the glow that emanated from it immediately went out. The two ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0055/>0055</a>
+Memories have been imparted into my soul, physical memories of lives past and present. I can feel t...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0052/>0052</a>
 -
-2021-12-27</l><div>“I’m worried about the safety of it all.” Brall paced around as he spoke. “Perhaps caution is bette...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0056/>0056</a>
+2021-12-17
 -
-2022-01-08</l><div>The corridor induced a hazy and dizzy feeling. It felt impossibly long, the sides felt as if they w...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0057/>0057</a>
+Does existing between two places make me less whole? Does existing apart from the Outer Edge weaken...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0053/>0053</a>
 -
-2022-01-21</l><div>Irie’s perception of time has dissolved. Her spatial understanding gone with it. Where she was she ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0058/>0058</a>
+2021-12-18
 -
-2022-02-02</l><div>Samson grabbed the staff, a gentle blue aura forming around the length of it. The runes written alo...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0059/>0059</a>
+The room glowed a soft blue light. The walls were stone but felt hazy and ethereal, it felt otherwo...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0054/>0054</a>
 -
-2022-02-06</l><div>Irie opened the book and began to read. Had she read this book before? The surrealism of her predic...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0060/>0060</a>
+2021-12-23
 -
-2022-02-12</l><div>The room was dark, silhouettes blurred. Pavel fumbled with a match trying his best to light it, the...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0061/>0061</a>
+The orb cracked when skin touched it, the glow that emanated from it immediately went out. The two ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0055/>0055</a>
 -
-2022-02-13</l><div>“Look in the skies above us. Do you see them? There. They see us. Their vision spreads out further ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0062/>0062</a>
+2021-12-27
 -
-2022-02-17</l><div>“What was life like before the veil?”
-“Honestly… I don’t know. Life seemed freer then. Humanity had...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0063/>0063</a>
+“I’m worried about the safety of it all.” Brall paced around as he spoke. “Perhaps caution is bette...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0056/>0056</a>
 -
-2022-02-19</l><div>That night the sky went dark. Something in humanity changed then, for the first time in thousands o...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0064/>0064</a>
+2022-01-08
 -
-2022-02-24</l><div>The stars are a scary place to travel between. You don’t expect to find anything there. You hope yo...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0065/>0065</a>
+The corridor induced a hazy and dizzy feeling. It felt impossibly long, the sides felt as if they w...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0057/>0057</a>
 -
-2022-02-25</l><div>Fear those who sympathize with the veil, their intentions don’t align with yours. The watchers will...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0066/>0066</a>
+2022-01-21
 -
-2022-02-26</l><div>“Do all the watchers know they’re being lied to?”
+Irie’s perception of time has dissolved. Her spatial understanding gone with it. Where she was she ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0058/>0058</a>
+-
+2022-02-02
+-
+Samson grabbed the staff, a gentle blue aura forming around the length of it. The runes written alo...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0059/>0059</a>
+-
+2022-02-06
+-
+Irie opened the book and began to read. Had she read this book before? The surrealism of her predic...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0060/>0060</a>
+-
+2022-02-12
+-
+The room was dark, silhouettes blurred. Pavel fumbled with a match trying his best to light it, the...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0061/>0061</a>
+-
+2022-02-13
+-
+“Look in the skies above us. Do you see them? There. They see us. Their vision spreads out further ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0062/>0062</a>
+-
+2022-02-17
+-
+“What was life like before the veil?”
+“Honestly… I don’t know. Life seemed freer then. Humanity had...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0063/>0063</a>
+-
+2022-02-19
+-
+That night the sky went dark. Something in humanity changed then, for the first time in thousands o...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0064/>0064</a>
+-
+2022-02-24
+-
+The stars are a scary place to travel between. You don’t expect to find anything there. You hope yo...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0065/>0065</a>
+-
+2022-02-25
+-
+Fear those who sympathize with the veil, their intentions don’t align with yours. The watchers will...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0066/>0066</a>
+-
+2022-02-26
+-
+“Do all the watchers know they’re being lied to?”
 “How do you know that they are?”
-“Are what? Being...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0067/>0067</a>
+“Are what? Being...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0067/>0067</a>
 -
-2022-03-13</l><div>&amp;ldquo;If you were to look up at the veil, could you find it&amp;rsquo;s heart? Could you too see what ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0068/>0068</a>
+2022-03-13
 -
-2022-03-16</l><div>“It’s interesting. The light rarely changes a person – but darkness – always does. Though what you ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0069/>0069</a>
+&amp;ldquo;If you were to look up at the veil, could you find it&amp;rsquo;s heart? Could you too see what ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0068/>0068</a>
 -
-2022-03-19</l><div>“Why do they reside over us?”
-“Why is the sky dark. Asking dumb questions about the universe won’t ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0070/>0070</a>
+2022-03-16
 -
-2022-03-31</l><div>&amp;ldquo;When the planets dissolve - when the stars come crashing down, I won&amp;rsquo;t be there to sav...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0071/>0071</a>
+“It’s interesting. The light rarely changes a person – but darkness – always does. Though what you ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0069/>0069</a>
 -
-2022-04-01</l><div>“How does it feel?”
-“Hm?” Gren looked up, clearly distracted. “How does what feel? I wasn’t listeni...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0072/>0072</a>
+2022-03-19
 -
-2022-04-06</l><div>At the time of his death, the thief had no regrets. Looking into the eyes of those before him it wa...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0073/>0073</a>
+“Why do they reside over us?”
+“Why is the sky dark. Asking dumb questions about the universe won’t ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0070/>0070</a>
 -
-2022-04-08</l><div>In the light it was easy to see the scars and emotional aging on the man, years and years of strugg...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0074/>0074</a>
+2022-03-31
 -
-2022-04-14</l><div>At the time it seemed clear to him, standing before the burning villages, that he had done what was...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0075/>0075</a>
+&amp;ldquo;When the planets dissolve - when the stars come crashing down, I won&amp;rsquo;t be there to sav...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0071/>0071</a>
 -
-2022-04-15</l><div>Tal stood facing out of the window of his ship, the land below him stretching far out until it disa...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0076/>0076</a>
+2022-04-01
 -
-2022-04-22</l><div>Barnib sat in the low light of his study, the shadows cast off his stacks of books and ink bottles ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0077/>0077</a>
+“How does it feel?”
+“Hm?” Gren looked up, clearly distracted. “How does what feel? I wasn’t listeni...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0072/>0072</a>
 -
-2022-04-22</l><div>He reached out, honestly, begging for someone to heed his calls. He recalled reciting passages of Le...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0078/>0078</a>
+2022-04-06
 -
-2022-04-24</l><div>The dry flaky dirt beneath steel boots made a soft crunching sound, armors were clinking, men groan...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0079/>0079</a>
+At the time of his death, the thief had no regrets. Looking into the eyes of those before him it wa...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0073/>0073</a>
 -
-2022-04-24</l><div>“Because it’s fun. Hey listen, do this for me and I’ll roll the fates for water. Seems you’re pretty...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0080/>0080</a>
+2022-04-08
 -
-2022-05-07</l><div>The pub was filled with motion, crowds of drunken people yelling and hollering over one another in ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0081/>0081</a>
+In the light it was easy to see the scars and emotional aging on the man, years and years of strugg...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0074/>0074</a>
 -
-2022-05-07</l><div>Riv couldn’t help but chuckle at the interaction, the man took advantage of him and his generosity b...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0082/>0082</a>
+2022-04-14
 -
-2022-05-11</l><div>The guards, I don&amp;rsquo;t think they&amp;rsquo;re bad people. They hurt me but I feel they&amp;rsquo;re jus...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0083/>0083</a>
+At the time it seemed clear to him, standing before the burning villages, that he had done what was...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0075/>0075</a>
 -
-2022-05-13</l><div>What I still can&amp;rsquo;t figure out after all this time.. who is behind this? I fear finding out mi...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0084/>0084</a>
+2022-04-15
 -
-2022-05-14</l><div>I have started making conversation with one of the guards. He often stays quiet or tells me to shut...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0085/>0085</a>
+Tal stood facing out of the window of his ship, the land below him stretching far out until it disa...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0076/>0076</a>
 -
-2022-05-15</l><div>King Tem lifted the letter off his desk, regarding it with a level of seriousness he hadn’t held in...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0086/>0086</a>
+2022-04-22
 -
-2022-05-27</l><div>With my hand stretched out I can feel the drops of rain slowly dripping off the edge of the roof. T...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0087/>0087</a>
+Barnib sat in the low light of his study, the shadows cast off his stacks of books and ink bottles ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0077/>0077</a>
 -
-2022-05-31</l><div>The night was as silent as any but it still left Rallyn feeling anxious. Would the assassin be here...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0088/>0088</a>
+2022-04-22
 -
-2022-05-31</l><div>She blinked and found herself standing over a man on the ground lying in a puddle of blood. She was ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0089/>0089</a>
+He reached out, honestly, begging for someone to heed his calls. He recalled reciting passages of Le...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0078/>0078</a>
 -
-2022-06-01</l><div>The feast was wonderful. A long banquet table piled with a vast assortment of trays and plates of t...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0090/>0090</a>
+2022-04-24
 -
-2022-06-01</l><div>Riv pulled another one of the bone plates holding the swirly colorful bread closer to him after fini...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0091/>0091</a>
+The dry flaky dirt beneath steel boots made a soft crunching sound, armors were clinking, men groan...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0079/>0079</a>
 -
-2022-06-01</l><div>The king seemed confused, his brow furrowed. “I.. don’t understand.. destroying dark alloy? Is that ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0092/>0092</a>
+2022-04-24
 -
-2022-06-02</l><div>Though the sun had risen, the sky remained dark. This was a place of shadow, a place ruled by anoth...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0093/>0093</a>
+“Because it’s fun. Hey listen, do this for me and I’ll roll the fates for water. Seems you’re pretty...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0080/>0080</a>
 -
-2022-06-04</l><div>Riv kicked at a dead pheasant, the creature was missing feathers and patches of skin, likely a sick...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0094/>0094</a>
+2022-05-07
 -
-2022-06-04</l><div>The shorter one, Rallyn, was of more interest to Riv, there was a sense of competence and experience...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0095/>0095</a>
+The pub was filled with motion, crowds of drunken people yelling and hollering over one another in ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0081/>0081</a>
 -
-2022-06-04</l><div>Without a word Riv started walking again, his lesson finished. He could hear Kedrel grumble and stom...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0096/>0096</a>
+2022-05-07
 -
-2022-06-07</l><div>King Tem worked his way along the main city road of Wintrel, polished cobblestones passing undernea...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0097/>0097</a>
+Riv couldn’t help but chuckle at the interaction, the man took advantage of him and his generosity b...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0082/>0082</a>
 -
-2022-06-07</l><div>Tem stopped along the road to observe a sign for a leather workers shop, inside its windows you coul...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0098/>0098</a>
+2022-05-11
 -
-2022-06-09</l><div>&amp;ldquo;I can see the way they look at me now. They see me as a human, like them.&amp;rdquo; -Excerpt fr...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0099/>0099</a>
+The guards, I don&amp;rsquo;t think they&amp;rsquo;re bad people. They hurt me but I feel they&amp;rsquo;re jus...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0083/>0083</a>
 -
-2022-06-17</l><div>&amp;ldquo;You just have to trust that the path you chose is the right one.&amp;rdquo; -Excerpt from Journa...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0100/>0100</a>
+2022-05-13
 -
-2022-06-18</l><div>I was told today would be the day that I would see the sun again. I didn&amp;rsquo;t expect it to be so...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0101/>0101</a>
+What I still can&amp;rsquo;t figure out after all this time.. who is behind this? I fear finding out mi...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0084/>0084</a>
 -
-2022-06-25</l><div>“Do you ever wonder what the stars see?”
+2022-05-14
+-
+I have started making conversation with one of the guards. He often stays quiet or tells me to shut...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0085/>0085</a>
+-
+2022-05-15
+-
+King Tem lifted the letter off his desk, regarding it with a level of seriousness he hadn’t held in...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0086/>0086</a>
+-
+2022-05-27
+-
+With my hand stretched out I can feel the drops of rain slowly dripping off the edge of the roof. T...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0087/>0087</a>
+-
+2022-05-31
+-
+The night was as silent as any but it still left Rallyn feeling anxious. Would the assassin be here...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0088/>0088</a>
+-
+2022-05-31
+-
+She blinked and found herself standing over a man on the ground lying in a puddle of blood. She was ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0089/>0089</a>
+-
+2022-06-01
+-
+The feast was wonderful. A long banquet table piled with a vast assortment of trays and plates of t...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0090/>0090</a>
+-
+2022-06-01
+-
+Riv pulled another one of the bone plates holding the swirly colorful bread closer to him after fini...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0091/>0091</a>
+-
+2022-06-01
+-
+The king seemed confused, his brow furrowed. “I.. don’t understand.. destroying dark alloy? Is that ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0092/>0092</a>
+-
+2022-06-02
+-
+Though the sun had risen, the sky remained dark. This was a place of shadow, a place ruled by anoth...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0093/>0093</a>
+-
+2022-06-04
+-
+Riv kicked at a dead pheasant, the creature was missing feathers and patches of skin, likely a sick...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0094/>0094</a>
+-
+2022-06-04
+-
+The shorter one, Rallyn, was of more interest to Riv, there was a sense of competence and experience...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0095/>0095</a>
+-
+2022-06-04
+-
+Without a word Riv started walking again, his lesson finished. He could hear Kedrel grumble and stom...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0096/>0096</a>
+-
+2022-06-07
+-
+King Tem worked his way along the main city road of Wintrel, polished cobblestones passing undernea...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0097/>0097</a>
+-
+2022-06-07
+-
+Tem stopped along the road to observe a sign for a leather workers shop, inside its windows you coul...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0098/>0098</a>
+-
+2022-06-09
+-
+&amp;ldquo;I can see the way they look at me now. They see me as a human, like them.&amp;rdquo; -Excerpt fr...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0099/>0099</a>
+-
+2022-06-17
+-
+&amp;ldquo;You just have to trust that the path you chose is the right one.&amp;rdquo; -Excerpt from Journa...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0100/>0100</a>
+-
+2022-06-18
+-
+I was told today would be the day that I would see the sun again. I didn&amp;rsquo;t expect it to be so...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0101/>0101</a>
+-
+2022-06-25
+-
+“Do you ever wonder what the stars see?”
 “What?”
-“I mean we can’t see them, everything is dark, can...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0102/>0102</a>
+“I mean we can’t see them, everything is dark, can...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0102/>0102</a>
 -
-2022-07-21</l><div>It&amp;rsquo;s been a long time. Too long in fact. This universe has not been kind to me. I&amp;rsquo;ve be...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0103/>0103</a>
+2022-07-21
 -
-2022-09-24</l><div>“Do you know where you are?”
-The question was simple. It was short. Brint knew that much. Why was h...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0104/>0104</a>
+It&amp;rsquo;s been a long time. Too long in fact. This universe has not been kind to me. I&amp;rsquo;ve be...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0103/>0103</a>
 -
-2022-09-25</l><div>Nym felt he was close, so very close to understanding. The secrets felt beyond his grasp, beyond co...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0105/>0105</a>
+2022-09-24
 -
-2022-09-27</l><div>It seemed so obvious once the truth was revealed. How could they have not seen it earlier? The Seer...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0106/>0106</a>
+“Do you know where you are?”
+The question was simple. It was short. Brint knew that much. Why was h...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0104/>0104</a>
 -
-2022-09-28</l><div>Seven days. Fin had seven days left to live. He stopped for a moment, appreciating the soft breeze ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0107/>0107</a>
+2022-09-25
 -
-2022-09-30</l><div>Rothswips by legend were very small rodent creatures, white in color, large ears, and that fabled e...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0108/>0108</a>
+Nym felt he was close, so very close to understanding. The secrets felt beyond his grasp, beyond co...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0105/>0105</a>
 -
-2022-10-02</l><div>Fin was a master hunter, he understood the forests more so perhaps than many of the creatures that ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0109/>0109</a>
+2022-09-27
 -
-2022-10-07</l><div>We now have to ask ourselves who, or what, created this barrier? Who had the power to create a shel...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0110/>0110</a>
+It seemed so obvious once the truth was revealed. How could they have not seen it earlier? The Seer...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0106/>0106</a>
 -
-2022-11-01</l><div>Another night of fog. Wonderful. Perin sat on the high outer walls of Wintrel, legs dangling down o...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0111/>0111</a>
+2022-09-28
 -
-2022-11-03</l><div>A sharp snap of wood made Fin twirl, knife at the ready. Nothing. He couldn’t see anyone or anythin...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0112/>0112</a>
+Seven days. Fin had seven days left to live. He stopped for a moment, appreciating the soft breeze ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0107/>0107</a>
 -
-2022-11-11</l><div>We often credit mishap as the source of connection for the multiverse. The catalyst however was con...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0113/>0113</a>
+2022-09-30
 -
-2022-11-12</l><div>I sat in orbit for a while, thinking. Studying Fifteen, the way the planet moved, the way its color...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0114/>0114</a>
+Rothswips by legend were very small rodent creatures, white in color, large ears, and that fabled e...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0108/>0108</a>
 -
-2022-11-15</l><div>Pavel jolted awake, a loud sound ripped him from sleep. He looked around in the darkness, just a sl...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0115/>0115</a>
+2022-10-02
 -
-2022-11-19</l><div>Fin stoked the fire, watching little wisps and embers float up and vanish. Soon he would join those...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0116/>0116</a>
+Fin was a master hunter, he understood the forests more so perhaps than many of the creatures that ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0109/>0109</a>
 -
-2022-11-26</l><div>Fin, now standing, pointed his knife at the strange man, the fire still blazing and crackling betwe...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0117/>0117</a>
+2022-10-07
 -
-2022-12-01</l><div>Rel held the silver platter steady, several ivory plates and cups stacked high, each containing the...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0118/>0118</a>
+We now have to ask ourselves who, or what, created this barrier? Who had the power to create a shel...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0110/>0110</a>
 -
-2022-12-01</l><div>Fellren frowned deeply, projecting his hateful gaze onto her. Rel understood why it was easier to st...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0119/>0119</a>
+2022-11-01
 -
-2022-12-08</l><div>Another day, another night, another journey, another plight. At the end of the road lies a scholar ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0120/>0120</a>
+Another night of fog. Wonderful. Perin sat on the high outer walls of Wintrel, legs dangling down o...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0111/>0111</a>
 -
-2023-01-14</l><div>Bell marched down the corridor, studying the faces that flashed through the bars. She couldn’t imag...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0121/>0121</a>
+2022-11-03
 -
-2023-01-16</l><div>The prisoner’s clothes were bright white and clean, they seemed like they had been pressed recently...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0122/>0122</a>
+A sharp snap of wood made Fin twirl, knife at the ready. Nothing. He couldn’t see anyone or anythin...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0112/>0112</a>
 -
-2023-01-20</l><div>No stars were out tonight, bad sign. They say the stars were guides, without them you traveled alon...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0123/>0123</a>
+2022-11-11
 -
-2023-01-22</l><div>The sun was hot today. Wendel’s skin burned, the dry heat felt like it was searing him, a slow roas...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0124/>0124</a>
+We often credit mishap as the source of connection for the multiverse. The catalyst however was con...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0113/>0113</a>
 -
-2023-01-23</l><div>On a cosmic scale it&amp;rsquo;s easy to overlook small things. Like people. I think so many civilizati...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0125/>0125</a>
+2022-11-12
 -
-2023-01-25</l><div>There was a lot to understand about the systems that lay stranded within the veil. Looking back on ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0126/>0126</a>
+I sat in orbit for a while, thinking. Studying Fifteen, the way the planet moved, the way its color...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0114/>0114</a>
 -
-2023-01-28</l><div>Spending your life dealing with the Aurium underground, the dim witted scum that ran the streets, t...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0127/>0127</a>
+2022-11-15
 -
-2023-01-30</l><div>”When the sky turned dark I remember thinking it was the end. What are you supposed to think, ya kn...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0128/>0128</a>
+Pavel jolted awake, a loud sound ripped him from sleep. He looked around in the darkness, just a sl...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0115/>0115</a>
 -
-2023-02-01</l><div>”The people do not know how fortunate they are. They have been given a gift of protection and they ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0129/>0129</a>
+2022-11-19
 -
-2023-02-02</l><div>“Article four, section twenty-seven. The opposing party may not demonstrate threat to the crown or ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0130/>0130</a>
+Fin stoked the fire, watching little wisps and embers float up and vanish. Soon he would join those...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0116/>0116</a>
 -
-2023-02-04</l><div>Cera sat in the back of the boarded wagon, her hands and feet being bound by rope made it difficult...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0131/>0131</a>
+2022-11-26
 -
-2023-02-04</l><div>Pipe continued to groan in pain. She heard a thump and winced and the sharp cry Pipe made. A part of...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0132/>0132</a>
+Fin, now standing, pointed his knife at the strange man, the fire still blazing and crackling betwe...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0117/>0117</a>
 -
-2023-02-08</l><div>Cera watched in horror as the flames spread out from the torch and crawled out along the dry wooden...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0133/>0133</a>
+2022-12-01
 -
-2023-02-10</l><div>I heard a legend about a planet that was cut off from its star. I felt bad for the people that live...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0134/>0134</a>
+Rel held the silver platter steady, several ivory plates and cups stacked high, each containing the...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0118/>0118</a>
 -
-2023-02-14</l><div>”We chose not to venture beyond the Divide. We didn’t care about what we lost out there, our homes,...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0135/>0135</a>
+2022-12-01
 -
-2023-02-18</l><div>”The Divided are real, they look as we do, talk as we do. They carry with them a dark shadow, an af...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0136/>0136</a>
+Fellren frowned deeply, projecting his hateful gaze onto her. Rel understood why it was easier to st...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0119/>0119</a>
 -
-2023-02-19</l><div>”At the time we weren’t aware of the.. effects of the veil. It took us a long time to realize what ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0137/>0137</a>
+2022-12-08
 -
-2023-02-21</l><div>This is it. The end of the road. Holding her bleeding hand and sat back against the wagon wall, Cer...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0138/>0138</a>
+Another day, another night, another journey, another plight. At the end of the road lies a scholar ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0120/>0120</a>
 -
-2023-02-21</l><div>The far wall exploded and crumbled inward, a spray of ember and char flying out towards Cera. A larg...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0139/>0139</a>
+2023-01-14
 -
-2023-03-01</l><div>“For the first time in a long time, I feel relieved. Our people, they cannot eat.. which means they...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0140/>0140</a>
+Bell marched down the corridor, studying the faces that flashed through the bars. She couldn’t imag...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0121/>0121</a>
 -
-2023-03-02</l><div>“I wish you didn’t put all of this burden on yourself.”
-Nym sighed, “I wish the same, dear. But the...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0141/>0141</a>
+2023-01-16
 -
-2023-03-21</l><div>“I wish that you could know we are as real as you, regardless of creation, we feel in the same way ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0142/>0142</a>
+The prisoner’s clothes were bright white and clean, they seemed like they had been pressed recently...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0122/>0122</a>
 -
-2023-03-23</l><div>“Nah, don’t let em fool ya. They’re smart enough to know how to act like ya, but they don’t feel. T...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0143/>0143</a>
+2023-01-20
 -
-2023-03-28</l><div>The shadow of grief hung behind the soldiers like a cloak, shielding them from the inevitability of...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0144/>0144</a>
+No stars were out tonight, bad sign. They say the stars were guides, without them you traveled alon...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0123/>0123</a>
 -
-2023-03-31</l><div>Sellira closed the door to her room and bolted the lock. She lingered, a hand on the frame, her min...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0145/>0145</a>
+2023-01-22
 -
-2023-04-04</l><div>At the time I was particularly uninvested in the cracking of the shell – not that it was unexciting...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0146/>0146</a>
+The sun was hot today. Wendel’s skin burned, the dry heat felt like it was searing him, a slow roas...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0124/>0124</a>
 -
-2023-04-06</l><div>“Have we always been ruled over by the gods? Even before the veil?”
-“Yes, dear. In the time of star...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0147/>0147</a>
+2023-01-23
 -
-2023-04-09</l><div>Petyl closed her notebook softly, another entry finished. It was exhausting. Everyone thought of he...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0148/>0148</a>
+On a cosmic scale it&amp;rsquo;s easy to overlook small things. Like people. I think so many civilizati...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0125/>0125</a>
 -
-2023-04-09</l><div>In the end Fin chose to trust. To sleep. Whether it was the desperation and exhaustion he felt or t...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0149/>0149</a>
+2023-01-25
 -
-2023-04-11</l><div>“So what, the guy fell asleep and just got to talk with a god or something? Then screwed it up?”
-“I...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0150/>0150</a>
+There was a lot to understand about the systems that lay stranded within the veil. Looking back on ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0126/>0126</a>
 -
-2023-04-21</l><div>There were many pivotal moments in our discoveries, but one serves as a particularly haunting point...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0151/>0151</a>
+2023-01-28
 -
-2023-04-25</l><div>Perin felt comfortable past the Divide, free. A liberated part of the world which held no direct co...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0152/>0152</a>
+Spending your life dealing with the Aurium underground, the dim witted scum that ran the streets, t...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0127/>0127</a>
 -
-2023-04-27</l><div>Ryn spent the next hour or so treading carefully towards the distant light, keeping low. The light ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0153/>0153</a>
+2023-01-30
 -
-2023-05-03</l><div>Khri stood on the steps of the star temple, the sky orb cradled in both hands. This was it. After h...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0154/>0154</a>
+”When the sky turned dark I remember thinking it was the end. What are you supposed to think, ya kn...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0128/>0128</a>
 -
-2023-05-09</l><div>“Sir, reports show a high compression zone at sector 96B, mismatched output frequencies are cre-“
-“...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0155/>0155</a>
+2023-02-01
 -
-2023-05-11</l><div>A few officers were bustling around Zarin as he stood patiently, hands held together behind his bac...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0156/>0156</a>
+”The people do not know how fortunate they are. They have been given a gift of protection and they ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0129/>0129</a>
 -
-2023-05-31</l><div>Aarand followed in line behind his escort officer down the halls of the Empyrean. He hadn’t been he...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0157/>0157</a>
+2023-02-02
 -
-2023-06-02</l><div>Aarand stepped back into his own personal room aboard the Empyrean capital ship, a small vegetable ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Armedius/>Armedius</a>
--</l><div>...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Don/>Don</a>
--</l><div>...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Pavel/>Pavel</a>
--</l><div>...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Pipe/>Pipe</a>
--</l><div>...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Rallyn/>Rallyn</a>
--</l><div>...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/README/>README</a>
+“Article four, section twenty-seven. The opposing party may not demonstrate threat to the crown or ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0130/>0130</a>
 -
-raceLore R</l><div>po for storing Race&amp;rsquo;s Lore alerts with an Obsidian Vault for creating a connection map.
-Change...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Riv/>Riv</a>
--</l><div>...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/TODO/>TODO</a>
+2023-02-04
 -
-TODO Corr</l><div>ct Don tag tagging &amp;ldquo;Don&amp;rsquo;t&amp;rdquo; Multi-tagging i.e. &amp;lsquo;Khri Ettur&amp;rsquo; should coll...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/callouts/>Callouts</a>
+Cera sat in the back of the boarded wagon, her hands and feet being bound by rope made it difficult...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0131/>0131</a>
 -
-Callout su</l><div>port Quartz supports the same Admonition-callout syntax as Obsidian.
+2023-02-04
+-
+Pipe continued to groan in pain. She heard a thump and winced and the sharp cry Pipe made. A part of...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0132/>0132</a>
+-
+2023-02-08
+-
+Cera watched in horror as the flames spread out from the torch and crawled out along the dry wooden...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0133/>0133</a>
+-
+2023-02-10
+-
+I heard a legend about a planet that was cut off from its star. I felt bad for the people that live...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0134/>0134</a>
+-
+2023-02-14
+-
+”We chose not to venture beyond the Divide. We didn’t care about what we lost out there, our homes,...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0135/>0135</a>
+-
+2023-02-18
+-
+”The Divided are real, they look as we do, talk as we do. They carry with them a dark shadow, an af...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0136/>0136</a>
+-
+2023-02-19
+-
+”At the time we weren’t aware of the.. effects of the veil. It took us a long time to realize what ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0137/>0137</a>
+-
+2023-02-21
+-
+This is it. The end of the road. Holding her bleeding hand and sat back against the wagon wall, Cer...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0138/>0138</a>
+-
+2023-02-21
+-
+The far wall exploded and crumbled inward, a spray of ember and char flying out towards Cera. A larg...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0139/>0139</a>
+-
+2023-03-01
+-
+“For the first time in a long time, I feel relieved. Our people, they cannot eat.. which means they...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0140/>0140</a>
+-
+2023-03-02
+-
+“I wish you didn’t put all of this burden on yourself.”
+Nym sighed, “I wish the same, dear. But the...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0141/>0141</a>
+-
+2023-03-21
+-
+“I wish that you could know we are as real as you, regardless of creation, we feel in the same way ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0142/>0142</a>
+-
+2023-03-23
+-
+“Nah, don’t let em fool ya. They’re smart enough to know how to act like ya, but they don’t feel. T...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0143/>0143</a>
+-
+2023-03-28
+-
+The shadow of grief hung behind the soldiers like a cloak, shielding them from the inevitability of...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0144/>0144</a>
+-
+2023-03-31
+-
+Sellira closed the door to her room and bolted the lock. She lingered, a hand on the frame, her min...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0145/>0145</a>
+-
+2023-04-04
+-
+At the time I was particularly uninvested in the cracking of the shell – not that it was unexciting...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0146/>0146</a>
+-
+2023-04-06
+-
+“Have we always been ruled over by the gods? Even before the veil?”
+“Yes, dear. In the time of star...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0147/>0147</a>
+-
+2023-04-09
+-
+Petyl closed her notebook softly, another entry finished. It was exhausting. Everyone thought of he...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0148/>0148</a>
+-
+2023-04-09
+-
+In the end Fin chose to trust. To sleep. Whether it was the desperation and exhaustion he felt or t...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0149/>0149</a>
+-
+2023-04-11
+-
+“So what, the guy fell asleep and just got to talk with a god or something? Then screwed it up?”
+“I...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0150/>0150</a>
+-
+2023-04-21
+-
+There were many pivotal moments in our discoveries, but one serves as a particularly haunting point...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0151/>0151</a>
+-
+2023-04-25
+-
+Perin felt comfortable past the Divide, free. A liberated part of the world which held no direct co...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0152/>0152</a>
+-
+2023-04-27
+-
+Ryn spent the next hour or so treading carefully towards the distant light, keeping low. The light ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0153/>0153</a>
+-
+2023-05-03
+-
+Khri stood on the steps of the star temple, the sky orb cradled in both hands. This was it. After h...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0154/>0154</a>
+-
+2023-05-09
+-
+“Sir, reports show a high compression zone at sector 96B, mismatched output frequencies are cre-“
+“...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0155/>0155</a>
+-
+2023-05-11
+-
+A few officers were bustling around Zarin as he stood patiently, hands held together behind his bac...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0156/>0156</a>
+-
+2023-05-31
+-
+Aarand followed in line behind his escort officer down the halls of the Empyrean. He hadn’t been he...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/0157/>0157</a>
+-
+2023-06-02
+-
+Aarand stepped back into his own personal room aboard the Empyrean capital ship, a small vegetable ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Armedius/>Armedius</a>
+-
+-
+...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Don/>Don</a>
+-
+-
+...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Pavel/>Pavel</a>
+-
+-
+...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Pipe/>Pipe</a>
+-
+-
+...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Rallyn/>Rallyn</a>
+-
+-
+...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/README/>README</a>
+-
+raceLore R
+-
+po for storing Race&amp;rsquo;s Lore alerts with an Obsidian Vault for creating a connection map.
+Change...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/Riv/>Riv</a>
+-
+-
+...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/TODO/>TODO</a>
+-
+TODO Corr
+-
+ct Don tag tagging &amp;ldquo;Don&amp;rsquo;t&amp;rdquo; Multi-tagging i.e. &amp;lsquo;Khri Ettur&amp;rsquo; should coll...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/callouts/>Callouts</a>
+-
+Callout su
+-
+port Quartz supports the same Admonition-callout syntax as Obsidian.
 This includes
-12 Distinct call...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/CJK-+-Latex-Support-%E6%B5%8B%E8%AF%95/>CJK + Latex Support (测试)</a>
+12 Distinct call...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/CJK-+-Latex-Support-%E6%B5%8B%E8%AF%95/>CJK + Latex Support (测试)</a>
 -
-Chinese, J</l><div>panese, Korean Support 几乎在我们意识到之前，我们已经离开了地面。
+Chinese, J
+-
+panese, Korean Support 几乎在我们意识到之前，我们已经离开了地面。
 우리가 그것을 알기도 전에 우리는 땅을 떠났습니다.
-私たちがそれを知るほぼ前に、私たちは地面を離れていま...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/config/>Configuration</a>
+私たちがそれを知るほぼ前に、私たちは地面を離れていま...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/config/>Configuration</a>
 -
-Configurat</l><div>on Quartz is designed to be extremely configurable. You can find the bulk of the configuration scatt...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/custom-Domain/>Custom Domain</a>
+Configurat
 -
-Registrar</l><div>his step is only applicable if you are using a custom domain! If you are using a &amp;lt;YOUR-USERNAME&g...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/hosting/>Deploying Quartz to the Web</a>
+on Quartz is designed to be extremely configurable. You can find the bulk of the configuration scatt...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/custom-Domain/>Custom Domain</a>
 -
-Hosting on</l><div>GitHub Pages Quartz is designed to be effortless to deploy. If you forked and cloned Quartz directly...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/editing/>Editing Content in Quartz</a>
+Registrar
 -
-Editing Qu</l><div>rtz runs on top of Hugo so all notes are written in Markdown.
-Folder Structure Here&amp;rsquo;s a rough ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/docker/>Hosting with Docker</a>
+his step is only applicable if you are using a custom domain! If you are using a &amp;lt;YOUR-USERNAME&g...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/hosting/>Deploying Quartz to the Web</a>
 -
-If you wan</l><div>to host Quartz on a machine without using a webpage hosting service, it may be easier to install Do...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/ignore-notes/>Ignoring Notes</a>
+Hosting on
 -
-Quartz Ign</l><div>re Edit ignoreFiles in config.toml to include paths you&amp;rsquo;d like to exclude from being rendered....</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/obsidian/>Obsidian Vault Integration</a>
+GitHub Pages Quartz is designed to be effortless to deploy. If you forked and cloned Quartz directly...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/editing/>Editing Content in Quartz</a>
 -
-Setup Obsi</l><div>ian is the preferred way to use Quartz. You can either create a new Obsidian Vault or link one that ...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/preview-changes/>Preview Changes</a>
+Editing Qu
 -
-If you&rsq</l><div>o;d like to preview what your Quartz site looks like before deploying it to the internet, the follow...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/philosophy/>Quartz Philosophy</a>
+rtz runs on top of Hugo so all notes are written in Markdown.
+Folder Structure Here&amp;rsquo;s a rough ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/docker/>Hosting with Docker</a>
 -
-“One who</l><div>orks with the door open gets all kinds of interruptions, but they also occasionally gets clues as to...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/search/>Search</a>
+If you wan
 -
-Quartz sup</l><div>orts two modes of searching through content.
-Full-text Full-text search is the default in Quartz. It...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/setup/>Setup</a>
+to host Quartz on a machine without using a webpage hosting service, it may be easier to install Do...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/ignore-notes/>Ignoring Notes</a>
 -
-Making you</l><div>own Quartz Setting up Quartz requires a basic understanding of git. If you are unfamiliar, this res...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/showcase/>Showcase</a>
+Quartz Ign
 -
-Want to se</l><div>what Quartz can do? Here are some cool community gardens :)
-Quartz Documentation (this site!) Ja...</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/troubleshooting/>Troubleshooting and FAQ</a>
+re Edit ignoreFiles in config.toml to include paths you&amp;rsquo;d like to exclude from being rendered....</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/obsidian/>Obsidian Vault Integration</a>
 -
-Still havi</l><div>g trouble? Here are a list of common questions and problems people encounter when installing Quartz....</div><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/updating/>Updating</a>
+Setup Obsi
 -
-Haven&rsqu</l><div>;t updated Quartz in a while and want all the cool new optimizations? On Unix/Mac systems you can ru...</div><br></div><br></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://marktullius.github.io/RaceLoreVault/js/graph.6579af7b10c818dbd2ca038702db0224.js></script></div></div><div id=contact_buttons><footer><p>Made by Jacky Zhao using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><ul><li><a href=https://twitter.com/_jzhao>Twitter</a></li><li><a href=https://github.com/jackyzha0>GitHub</a></li></ul></footer></div></div></body></html>
+ian is the preferred way to use Quartz. You can either create a new Obsidian Vault or link one that ...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/preview-changes/>Preview Changes</a>
+-
+If you&rsq
+-
+o;d like to preview what your Quartz site looks like before deploying it to the internet, the follow...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/philosophy/>Quartz Philosophy</a>
+-
+“One who
+-
+orks with the door open gets all kinds of interruptions, but they also occasionally gets clues as to...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/search/>Search</a>
+-
+Quartz sup
+-
+orts two modes of searching through content.
+Full-text Full-text search is the default in Quartz. It...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/setup/>Setup</a>
+-
+Making you
+-
+own Quartz Setting up Quartz requires a basic understanding of git. If you are unfamiliar, this res...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/showcase/>Showcase</a>
+-
+Want to se
+-
+what Quartz can do? Here are some cool community gardens :)
+Quartz Documentation (this site!) Ja...</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/troubleshooting/>Troubleshooting and FAQ</a>
+-
+Still havi
+-
+g trouble? Here are a list of common questions and problems people encounter when installing Quartz....</l><br></div><br><div id=preview-container><l><a href=https://marktullius.github.io/RaceLoreVault/notes/updating/>Updating</a>
+-
+Haven&rsqu
+-
+;t updated Quartz in a while and want all the cool new optimizations? On Unix/Mac systems you can ru...</l><br></div><br></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://marktullius.github.io/RaceLoreVault/js/graph.6579af7b10c818dbd2ca038702db0224.js></script></div></div><div id=contact_buttons><footer><p>Made by Jacky Zhao using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><ul><li><a href=https://twitter.com/_jzhao>Twitter</a></li><li><a href=https://github.com/jackyzha0>GitHub</a></li></ul></footer></div></div></body></html>
