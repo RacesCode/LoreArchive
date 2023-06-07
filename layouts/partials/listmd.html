@@ -1,37 +1,13 @@
-{{/* listmd.html */}}
 <section class="md-list">
   <h2>List of Available Notes</h2>
-  <ul id="noteList"></ul>
   <ul>
     {{ $files := .Site.RegularPages.ByTitle }}
-    {{ $sortedFiles := slice }}
     {{ range $files }}
       {{ $title := .Params.title }}
       {{ if not $title }}
         {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
       {{ end }}
-      {{ $sortedFiles = $sortedFiles | append $title }}
+      <li><a href="{{ .Permalink }}">{{ $title }}</a></li>
     {{ end }}
-    <script>
-      // JavaScript code to sort the files numerically
-      var sortedFiles = JSON.parse('{{ $sortedFiles | jsonify }}');
-      sortedFiles.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
-
-      // JavaScript code to populate the list of hyperlinks
-      var noteList = document.getElementById("noteList");
-      for (var i = 0; i < sortedFiles.length; i++) {
-        var fileName = sortedFiles[i];
-        var found = false;
-        for (var j = 0; j < files.length; j++) {
-          var listItem = document.createElement("li");
-          var link = document.createElement("a");
-          var url = new URL(`https://marktullius.github.io/RaceLoreVault/notes/${fileName}`);
-          link.href = url.href;
-          link.textContent = fileName;
-          listItem.appendChild(link);
-          noteList.appendChild(listItem);
-          }
-        }
-    </script>
   </ul>
 </section>
