@@ -8,7 +8,6 @@
         {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
       {{ end }}
       {{ $content := .Content }}
-      <li><a href="{{ .Permalink }}">{{ $title }}</a> - {{ substr $content 14 50 }}...</li>
-    {{ end }}
+      <li><a href="{{ .Permalink }}">{{ $title }}</a> - {{ substr $content 1442
   </ul>
 </section>
