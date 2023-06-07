@@ -11,13 +11,13 @@
         <a href="{{ .Permalink }}">
           {{ $title }}
         </a>
-        <u id="dateFrmt">
-          {{ "-" }}
-          {{ substr $content 0 10 }}
-        </u>
       </l>
-        <br>
     </h2>
+    <u id="dateFrmt">
+      {{ "-" }}
+      {{ substr $content 0 10 }}
+    </u>
+    <br>
   </div>
   <br>
 {{ end }}
