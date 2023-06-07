@@ -270,15 +270,6 @@ sup > a {
   }
 }
 
-#dateFrmt {
-  margin: 0;
-  & > p {
-    font-family: var(--font-body);
-    font-size: 14px;
-    color: #8e99a0;
-  }
-}
-
 #preview-container {
   margin: 1px;
   border-radius: 4px;
@@ -286,6 +277,7 @@ sup > a {
   border-width: 2px;
   padding: 10px;
   background-color: #303341;
+  color: #9494a1;
   box-shadow: inset 0 0 10px #000000;
   
   & > a {
