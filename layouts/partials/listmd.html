@@ -1,14 +1,9 @@
-<section class="md-list">
-  <h2>List of Available Notes</h2>
-  <ul>
-    {{ $files := .Site.RegularPages.ByTitle }}
-    {{ range $files }}
-      {{ $title := .Params.title }}
-      {{ if not $title }}
-        {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
-      {{ end }}
-      {{ $content := .Content | plainify | replaceRE "\\[\\[(.*?)\\]\\]" "" | replaceRE "[\\[\\]*_#`<>]" "" }}
-      <li><a href="{{ .Permalink }}">{{ $title }}</a> - {{ printf "%s" $content | safeHTML }}</li>
-    {{ end }}
-  </ul>
-</section>
+{{ $files := .Site.RegularPages.ByTitle }}
+{{ range $files }}
+  {{ $title := .Params.title }}
+  {{ if not $title }}
+    {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
+  {{ end }}
+  {{ $content := .Content | plainify | replaceRE "\\[\\[(.*?)\\]\\]" "" | replaceRE "[\\[\\]*_#`<>]" "" }}
+  <li><a href="{{ .Permalink }}">{{ $title }}</a> - {{ substr (printf "%s" $content | safeHTML) 0 50 }}...</li>
+{{ end }}
