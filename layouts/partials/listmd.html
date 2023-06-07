@@ -6,17 +6,16 @@
   {{ end }}
   {{ $content := .Content | plainify | replaceRE "[\\[\\]*_#`<>]" "" }}
   <div id="preview-container">
-    <h2 id="entry-title">
-      <l>
-        <a href="{{ .Permalink }}">
-          {{ $title }}
-        </a>
-      </l>
-    </h2>
-    <u id="dateFrmt">
-      {{ "-" }}
-      {{ substr $content 0 10 }}
-    </u>
+    <l>
+      <a href="{{ .Permalink }}">
+        {{ $title }}
+      </a>
+      <u id="dateFrmt">
+        {{ "-" }}
+        {{ substr $content 0 10 }}
+      </u>
+    </l>
+    
     <br>
   </div>
   <br>
