@@ -6,7 +6,7 @@
   {{ end }}
   {{ $content := .Content | plainify | replaceRE "[\\[\\]*_#`<>]" "" | replaceRE "&rsquo;" "'" | replaceRE "&ldquo;" "\"" }}
   {{ $content := printf "%s" $content | safeHTML }}
-  <div class="graph-container">
+  <div id="preview-container">
     <h2 id="entry-title">
       <li>
         <a href="{{ .Permalink }}">{{ $title }}</a>
