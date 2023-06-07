@@ -4,22 +4,20 @@
   {{ if not $title }}
     {{ $title = .File.BaseFileName | replaceRE "(?i)\\.md$" "" }}
   {{ end }}
-  {{ $content := .Content | plainify | replaceRE "[\\[\\]*_#`<>]" "" | replaceRE "&rsquo;" "'" | replaceRE "&ldquo;" "\"" }}
-  {{ $content := printf "%s" $content | safeHTML }}
+  {{ $content := .Content | plainify | replaceRE "[\\[\\]*_#`<>]" "" }}
   <div id="preview-container">
     <h2 id="entry-title">
+      <l>
         <a href="{{ .Permalink }}">
           {{ $title }}
         </a>
-        <p id="dateFrmt">
+        <u id="dateFrmt">
+          {{ "-" }}
           {{ substr $content 0 10 }}
-        </p>
+        </u>
+      </l>
         <br>
     </h2>
-    <p>
-      {{ substr $content 11 }}
-      <br>
-    </p>
   </div>
   <br>
 {{ end }}
