@@ -20,26 +20,19 @@
       // JavaScript code to populate the list of hyperlinks
       var noteList = document.getElementById("noteList");
       for (var i = 0; i < sortedFiles.length; i++) {
-        var fileName = sortedFiles[i] + '.md';
+        var fileName = sortedFiles[i];
         var found = false;
-        var files = JSON.parse('{{ $files | jsonify }}');
         for (var j = 0; j < files.length; j++) {
-          var filePath = files[j].RelPermalink;
-          console.log(filepath);
-          var regex = /\/([^/]+)\.md$/; // Regex to extract the file name
-          var match = regex.exec(filePath);
-          if (match && match[1] === fileName) {
-            found = true;
-            var listItem = document.createElement("li");
-            var link = document.createElement("a");
-            link.href = files[j].Permalink;
-            link.textContent = files[j].Params.title;
-            listItem.appendChild(link);
-            noteList.appendChild(listItem);
-            break; // Exit the inner loop since the file is found
+          var listItem = document.createElement("li");
+          var link = document.createElement("a");
+          var url = new URL(`https://marktullius.github.io/RaceLoreVault/notes/${fileName}`);
+          link.href = url.href;
+          link.textContent = fileName;
+          listItem.appendChild(link);
+          noteList.appendChild(listItem);
+          break; // Exit the inner loop since the file is found
           }
         }
-      }
     </script>
   </ul>
 </section>
