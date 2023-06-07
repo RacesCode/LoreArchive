@@ -20,6 +20,7 @@
       // JavaScript code to populate the list of hyperlinks
       var noteList = document.getElementById("noteList");
       for (var i = 0; i < sortedFiles.length; i++) {
+        console.log(sortedFiles[i]);
         var fileName = sortedFiles[i] + '.md';
         var found = false;
         var files = JSON.parse('{{ $files | jsonify }}');
