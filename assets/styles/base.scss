@@ -271,15 +271,14 @@ sup > a {
 }
 
 #preview-container {
-  border: var(--outlinegray) 1px solid;
-  border-radius: 5px;
-  box-sizing: border-box;
-  min-height: 250px;
-  margin: 0.5em 0;
-
-  & > svg {
-    margin-bottom: -5px;
-
+  margin: 1px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  padding: 10px;
+  
+  & > a {
+    font-family: var(--font-body);
+    font-size: 22px;
   }
 }
 
