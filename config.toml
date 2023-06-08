@@ -1,4 +1,4 @@
-baseURL = "https://racescode.github.io/lorearchive/"
+baseURL = "https://racescode.github.io/LoreArchive/"
 languageCode = "en-us"
 relativeURLs = false
 disablePathToLower = true
