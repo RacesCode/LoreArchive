@@ -8,3 +8,4 @@
 7. Discord bot to automate scraping of alerts (psuh direct to site?)
 8. Automate running of import.py
 9. Make pretty page good look nice
+10. Page intro and bumpf
