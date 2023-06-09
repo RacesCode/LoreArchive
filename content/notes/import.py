@@ -1,6 +1,14 @@
 import json
 import re
 from datetime import datetime
+import os
+
+# Get the list of existing .md files in the folder
+existing_files = [filename for filename in os.listdir() if filename.endswith(".md") and "!ignore" not in filename]
+
+# Extract the numbers from the filenames and find the highest number
+numbers = [int(filename.split(".")[0]) for filename in existing_files if filename.split(".")[0].isdigit()]
+highest_number = max(numbers) if numbers else 0
 
 # Open the JSON file
 with open("messages.json", "r", encoding="utf-8") as f:
@@ -119,10 +127,12 @@ def process_content(content):
     return content
 
 # Loop through the messages and create .md files for the ones that meet the criteria
-count = 1
+count = highest_number + 1
+target_date = datetime.strptime("2023-06-08", "%Y-%m-%d").date()
 for messages in lore["messages"]:
   content = messages["content"]
-  if messages["timestamp"] >= "2023-06-08":
+  message_date = datetime.strptime(messages["timestamp"][:10], "%Y-%m-%d").date()
+  if message_date >= target_date:
     if ";" in content:
       filename = str(count).zfill(4) + ".md"
       with open(filename, "w", encoding="utf-8") as f:
