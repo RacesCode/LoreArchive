@@ -1,0 +1,47 @@
+{{- $characterFiles := dict -}}
+{{- $characterFile := "C:/Users/Mark/Documents/GitHub/LoreArchive/content/notes/characters.md" -}}
+{{- $characterNames := readFile $characterFile | split "/n" -}}
+{{- $characterNames = delimit $characterNames "" -}}
+
+{{- $commonWords := slice "the" "a" "an" "of" "and" "in" "is" "to" "for" "with" "on" "by" "as" "at" "from" -}}
+{{- $titleWords := slice "King" "Queen" "Prince" "Princess" "Lord" "Lady" -}}
+
+{{- $sanitizeName := func $name -}}
+    {{- $words := split $name " " -}}
+    {{- $sanitizedWords := slice -}}
+    {{- range $words -}}
+        {{- $word := . | lower -}}
+        {{- if not (in $commonWords $word) -}}
+            {{- if not (in $titleWords $word) -}}
+                {{- $sanitizedWords = $sanitizedWords | append $word -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- delimit $sanitizedWords " " -}}
+{{- end -}}
+
+<table>
+    <thead>
+        <tr>
+            <th>Character Name</th>
+            <th>Files</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{- range $characterNames -}}
+        <tr>
+            <td>{{- . -}}</td>
+            <td>
+                {{- $character := . -}}
+                {{- range where .Pages "Type" "!=" "!ignore" -}}
+                    {{- $characterFiles.Add $character (slice) -}}
+                    {{- $characterFiles.Set $character ($characterFiles.Get $character | append .) -}}
+                {{- end -}}
+                {{- range $characterFiles.Get $character -}}
+                    <a href="{{- .RelPermalink -}}">{{- .Title -}}</a><br>
+                {{- end -}}
+            </td>
+        </tr>
+        {{- end -}}
+    </tbody>
+</table>
