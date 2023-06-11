@@ -1,41 +1,35 @@
-{{- $characterFiles := dict -}}
-{{- $characterFile := "/path/to/characters.md" -}}
-{{- $characterNames := readFile $characterFile | split "\n" -}}
-{{- $characterNames = delimit $characterNames "" -}}
-
-{{- $commonWords := slice "the" "a" "an" "of" "and" "in" "is" "to" "for" "with" "on" "by" "as" "at" "from" -}}
-{{- $titleWords := slice "King" "Queen" "Prince" "Princess" "Lord" "Lady" -}}
-
-{{- $sanitizedCharacterNames := slice -}}
-{{- range $characterNames -}}
-    {{- $sanitizedName := $sanitizeName . -}}
-    {{- if ne $sanitizedName "" -}}
-        {{- $sanitizedCharacterNames = $sanitizedCharacterNames | append $sanitizedName -}}
-    {{- end -}}
-{{- end -}}
+{{ $characterFiles := dict }}
+{{ $characterFile := "C:/Users/Mark/Documents/GitHub/LoreArchive/content/notes/characters.md" }}
+{{ $characterNames := readFile $characterFile | split "\n" }}
+{{ $characterNames = delimit $characterNames "" }}
 
 <table>
-    <thead>
-        <tr>
-            <th>Character Name</th>
-            <th>Files</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{- range $sanitizedCharacterNames -}}
-        <tr>
-            <td>{{- . -}}</td>
-            <td>
-                {{- $character := . -}}
-                {{- range where .Pages "Type" "!=" "!ignore" -}}
-                    {{- $characterFiles.Add $character (slice) -}}
-                    {{- $characterFiles.Set $character ($characterFiles.Get $character | append .) -}}
-                {{- end -}}
-                {{- range $characterFiles.Get $character -}}
-                    <a href="{{- .RelPermalink -}}">{{- .Title -}}</a><br>
-                {{- end -}}
-            </td>
-        </tr>
-        {{- end -}}
-    </tbody>
+  <thead>
+    <tr>
+      <th>Character Name</th>
+      <th>Files</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $characterNames }}
+      {{ $character := . | trim }}
+      {{ $sanitizedName := printf "<script>document.write(sanitizeName('%s'));</script>" $character | safeJS }}
+      {{ $sanitizedName = delimit (slice $sanitizedName) "" }}
+
+      <tr>
+        <td>{{ $character }}</td>
+        <td>
+          {{ range where .Pages "Type" "!=" "!ignore" }}
+            {{ $characterFiles.Add $sanitizedName (slice) }}
+            {{ $characterFiles.Set $sanitizedName ($characterFiles.Get $sanitizedName | append .) }}
+          {{ end }}
+          {{ range $characterFiles.Get $sanitizedName }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+          {{ end }}
+        </td>
+      </tr>
+    {{ end }}
+  </tbody>
 </table>
+
+<script src="/js/sanitizeNames.js"></script>
