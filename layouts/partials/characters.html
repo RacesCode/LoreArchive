@@ -9,6 +9,20 @@
 
 {{ $site := .Site }}
 
+{{ $characterFiles := slice }}
+{{ range $site.RegularPages }}
+  {{ $content := .Plain }}
+  {{ $matchingFiles := slice }}
+  {{ range $characters }}
+    {{ if in $content . }}
+      {{ $matchingFiles = $matchingFiles | append . }}
+    {{ end }}
+  {{ end }}
+  {{ if gt (len $matchingFiles) 0 }}
+    {{ $characterFiles = $characterFiles | append (dict "Character" $content "Files" $matchingFiles) }}
+  {{ end }}
+{{ end }}
+
 <table>
   <thead>
     <tr>
@@ -17,27 +31,16 @@
     </tr>
   </thead>
   <tbody>
-    {{ range $characters }}
-      {{ $character := . }}
-      {{ $sanitizedName := printf "<script>document.write(sanitizeName('%s'));</script>" $character | safeJS }}
-      {{ $sanitizedName = delimit (slice $sanitizedName) "" }}
-
+    {{ range $characterFiles }}
       <tr>
-        <td>{{ $character }}</td>
+        <td>{{ .Character }}</td>
         <td>
-          {{ $characterFiles := slice }}
-          {{ range $site.RegularPages }}
-            {{ $content := .PlainWords }}
-            {{ $matchingFiles := where $site.RegularPages "Content" "intersect" (slice $content $character) }}
-            {{ $characterFiles = $characterFiles | append $matchingFiles }}
-          {{ end }}
-          {{ range $characterFiles }}
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+          {{ range .Files }}
+            {{ $file := . }}
+            <a href="{{ $file.RelPermalink }}">{{ $file.Title }}</a><br>
           {{ end }}
         </td>
       </tr>
     {{ end }}
   </tbody>
 </table>
-
-<script src="/js/sanitizeNames.js"></script>
