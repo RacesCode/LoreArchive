@@ -1,4 +1,4 @@
-{{ $characterFile := "content/notes/characters.md" }}
+
 {{ $characterNames := readFile $characterFile | split "\n" }}
 
 <table>
@@ -17,12 +17,13 @@
       <tr>
         <td>{{ $character }}</td>
         <td>
-          {{ $characterFiles := dict }}
-          {{ range where .Pages "Type" "!=" "!ignore" }}
-            {{ $characterFiles.Add $sanitizedName (slice) }}
-            {{ $characterFiles.Set $sanitizedName ($characterFiles.Get $sanitizedName | append .) }}
+          {{ $characterFiles := slice }}
+          {{ range where .Site.RegularPages "Type" "!=" "!ignore" }}
+            {{ if in .Content $character }}
+              {{ $characterFiles = $characterFiles | append . }}
+            {{ end }}
           {{ end }}
-          {{ range $characterFiles.Get $sanitizedName }}
+          {{ range $characterFiles }}
             <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
           {{ end }}
         </td>
