@@ -26,10 +26,10 @@
         <td>{{ $character }}</td>
         <td>
           {{ $characterFiles := slice }}
-          {{ range $site.RegularPages }}
-            {{ if in .Content $character }}
-              {{ $characterFiles = $characterFiles | append . }}
-            {{ end }}
+          {{ range .Site.RegularPages }}
+            {{ $content := .Content }}
+            {{ $matchingFiles := where $content "Content" "intersect" (slice $character) }}
+            {{ $characterFiles = $characterFiles | append $matchingFiles }}
           {{ end }}
           {{ range $characterFiles }}
             <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
