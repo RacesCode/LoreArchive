@@ -1,7 +1,5 @@
-{{ $characterFiles := dict }}
 {{ $characterFile := "content/notes/characters.md" }}
-{{ $characterNames := readFile $characterFile | split "\n" }}
-{{ $characterNames = delimit $characterNames "" }}
+{{ $characterNames := readFile $characterFile | split "\n" | delimit "" }}
 
 <table>
   <thead>
@@ -19,6 +17,7 @@
       <tr>
         <td>{{ $character }}</td>
         <td>
+          {{ $characterFiles := dict }}
           {{ range where .Pages "Type" "!=" "!ignore" }}
             {{ $characterFiles.Add $sanitizedName (slice) }}
             {{ $characterFiles.Set $sanitizedName ($characterFiles.Get $sanitizedName | append .) }}
