@@ -24,7 +24,8 @@
         <td>{{ $character }}</td>
         <td>
           {{ $characterFiles := slice }}
-          {{ range .Site.RegularPages }}
+          {{ $pages := .Site.RegularPages.ByTitle }}
+          {{ range $pages }}
             {{ if in .Content $character }}
               {{ $characterFiles = $characterFiles | append . }}
             {{ end }}
