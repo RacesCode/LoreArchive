@@ -19,23 +19,17 @@
   <tbody>
     {{ range $characters }}
       {{ $character := . }}
-      {{ $sanitizedName := printf "<script>document.write(sanitizeName('%s'));</script>" $character | safeJS }}
-      {{ $sanitizedName = delimit (slice $sanitizedName) "" }}
-
+      {{ $characterFiles := slice }}
+      {{ range $site.RegularPages }}
+        {{ $content := .Plain }}
+        {{ if in $content $character }}
+          {{ $characterFiles = $characterFiles | append . }}
+        {{ end }}
+      {{ end }}
       <tr>
         <td>{{ $character }}</td>
         <td>
-          {{ $characterFiles := slice }}
-          {{ range $site.RegularPages }}
-            {{ $content := .Plain }}
-            {{ $matchingFiles := where $content "intersect" (slice $character) }}
-            {{ $characterFiles = $characterFiles | append $matchingFiles }}
-          {{ end }}
-          {{ if eq (len $characterFiles) 0 }}
-            <!-- Debug output: No matching files found for character "{{ $character }}" -->
-          {{ end }}
           {{ range $characterFiles }}
-            <!-- Debug output: Matching file found for character "{{ $character }}": {{ .Title }} -->
             {{ $file := . }}
             <a href="{{ $file.RelPermalink }}">{{ $file.Title }}</a><br>
           {{ end }}
@@ -44,5 +38,3 @@
     {{ end }}
   </tbody>
 </table>
-
-<script src="/js/sanitizeNames.js"></script>
