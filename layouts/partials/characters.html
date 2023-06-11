@@ -24,6 +24,7 @@
         {{ $content := .Plain }}
         {{ if in $content $character }}
           {{ $characterFiles = $characterFiles | append . }}
+          {{ printf "Match found for character '%s' in file '%s'" $character .RelPermalink | println }}
         {{ end }}
       {{ end }}
       <tr>
