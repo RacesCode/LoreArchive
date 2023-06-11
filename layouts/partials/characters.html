@@ -26,7 +26,7 @@
         <td>{{ $character }}</td>
         <td>
           {{ $characterFiles := slice }}
-          {{ range .Site.RegularPages }}
+          {{ range $site.RegularPages }}
             {{ $content := .Content }}
             {{ $matchingFiles := where $content "Content" "intersect" (slice $character) }}
             {{ $characterFiles = $characterFiles | append $matchingFiles }}
