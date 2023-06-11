@@ -19,7 +19,7 @@
     {{ end }}
   {{ end }}
   {{ if gt (len $matchingFiles) 0 }}
-    {{ $characterFiles = $characterFiles | append (dict "Character" $content "Files" $matchingFiles) }}
+    {{ $characterFiles = $characterFiles | append $matchingFiles }}
   {{ end }}
 {{ end }}
 
@@ -33,9 +33,10 @@
   <tbody>
     {{ range $characterFiles }}
       <tr>
-        <td>{{ .Character }}</td>
+        <td>{{ . }}</td>
         <td>
-          {{ range .Files }}
+          {{ $matchingFiles := where $site.RegularPages "Params.Character" . }}
+          {{ range $matchingFiles }}
             {{ $file := . }}
             <a href="{{ $file.RelPermalink }}">{{ $file.Title }}</a><br>
           {{ end }}
