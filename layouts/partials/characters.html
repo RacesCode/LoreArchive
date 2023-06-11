@@ -1,5 +1,5 @@
 {{ $characterFiles := dict }}
-{{ $characterFile := "C:/Users/Mark/Documents/GitHub/LoreArchive/content/notes/characters.md" }}
+{{ $characterFile := "content/notes/characters.md" }}
 {{ $characterNames := readFile $characterFile | split "\n" }}
 {{ $characterNames = delimit $characterNames "" }}
 
