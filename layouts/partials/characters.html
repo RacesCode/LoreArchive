@@ -1,16 +1,13 @@
 {{ $characterFile := "content/notes/characters.md" }}
 {{ $characterNames := readFile $characterFile | split "\n" }}
 
-{{ $site := .Site }}
-{{ $characterFiles := slice }}
-
+{{ $characters := slice }}
 {{ range $characterNames }}
-  {{ $character := trim . " \t" }}
-  {{ $matchingFiles := where $site.RegularPages "Params.Character" $character }}
-  {{ if gt (len $matchingFiles) 0 }}
-    {{ $characterFiles = $characterFiles | append $matchingFiles }}
-  {{ end }}
+  {{ $character := trim . " \t\n" }}
+  {{ $characters = $characters | append $character }}
 {{ end }}
+
+{{ $site := .Site }}
 
 <table>
   <thead>
@@ -20,17 +17,32 @@
     </tr>
   </thead>
   <tbody>
-    {{ range $characterNames }}
-      {{ $character := trim . " \t" }}
+    {{ range $characters }}
+      {{ $character := . }}
+      {{ $sanitizedName := printf "<script>document.write(sanitizeName('%s'));</script>" $character | safeJS }}
+      {{ $sanitizedName = delimit (slice $sanitizedName) "" }}
+
       <tr>
         <td>{{ $character }}</td>
         <td>
-          {{ $characterFilesByCharacter := where $characterFiles "Params.Character" $character }}
-          {{ range $characterFilesByCharacter }}
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+          {{ $characterFiles := slice }}
+          {{ range $site.RegularPages }}
+            {{ $content := .Plain }}
+            {{ $matchingFiles := where $content "intersect" (slice $character) }}
+            {{ $characterFiles = $characterFiles | append $matchingFiles }}
+          {{ end }}
+          {{ if eq (len $characterFiles) 0 }}
+            <!-- Debug output: No matching files found for character "{{ $character }}" -->
+          {{ end }}
+          {{ range $characterFiles }}
+            <!-- Debug output: Matching file found for character "{{ $character }}": {{ .Title }} -->
+            {{ $file := . }}
+            <a href="{{ $file.RelPermalink }}">{{ $file.Title }}</a><br>
           {{ end }}
         </td>
       </tr>
     {{ end }}
   </tbody>
 </table>
+
+<script src="/js/sanitizeNames.js"></script>
