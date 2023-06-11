@@ -1,23 +1,12 @@
 {{ $characterFile := "content/notes/characters.md" }}
 {{ $characterNames := readFile $characterFile | split "\n" }}
 
-{{ $characters := slice }}
+{{ $site := .Site }}
+{{ $characterFiles := slice }}
+
 {{ range $characterNames }}
   {{ $character := trim . " \t" }}
-  {{ $characters = $characters | append $character }}
-{{ end }}
-
-{{ $site := .Site }}
-
-{{ $characterFiles := slice }}
-{{ range $site.RegularPages }}
-  {{ $content := .Plain }}
-  {{ $matchingFiles := slice }}
-  {{ range $characters }}
-    {{ if in $content . }}
-      {{ $matchingFiles = $matchingFiles | append . }}
-    {{ end }}
-  {{ end }}
+  {{ $matchingFiles := where $site.RegularPages "Params.Character" $character }}
   {{ if gt (len $matchingFiles) 0 }}
     {{ $characterFiles = $characterFiles | append $matchingFiles }}
   {{ end }}
@@ -31,13 +20,13 @@
     </tr>
   </thead>
   <tbody>
-    {{ range $characters }}
-      {{ $character := . }}
+    {{ range $characterNames }}
+      {{ $character := trim . " \t" }}
       <tr>
         <td>{{ $character }}</td>
         <td>
-          {{ $characterFiles := where $site.RegularPages "Params.Character" $character }}
-          {{ range $characterFiles }}
+          {{ $characterFilesByCharacter := where $characterFiles "Params.Character" $character }}
+          {{ range $characterFilesByCharacter }}
             <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
           {{ end }}
         </td>
