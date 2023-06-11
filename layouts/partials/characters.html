@@ -1,6 +1,12 @@
 {{ $characterFile := "content/notes/characters.md" }}
 {{ $characterNames := readFile $characterFile | split "\n" }}
 
+{{ $characters := slice }}
+{{ range $characterNames }}
+  {{ $character := trim . " \t" }}
+  {{ $characters = $characters | append $character }}
+{{ end }}
+
 <table>
   <thead>
     <tr>
@@ -9,8 +15,8 @@
     </tr>
   </thead>
   <tbody>
-    {{ range $characterNames }}
-      {{ $character := trim . " \t" }}
+    {{ range $characters }}
+      {{ $character := . }}
       {{ $sanitizedName := printf "<script>document.write(sanitizeName('%s'));</script>" $character | safeJS }}
       {{ $sanitizedName = delimit (slice $sanitizedName) "" }}
 
@@ -18,7 +24,7 @@
         <td>{{ $character }}</td>
         <td>
           {{ $characterFiles := slice }}
-          {{ range where .Site.RegularPages "Type" "!=" "!ignore" }}
+          {{ range .Site.RegularPages }}
             {{ if in .Content $character }}
               {{ $characterFiles = $characterFiles | append . }}
             {{ end }}
