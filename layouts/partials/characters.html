@@ -1,5 +1,5 @@
 {{ $characterFile := "content/notes/characters.md" }}
-{{ $characterNames := readFile $characterFile | split "\n" | delimit "" }}
+{{ $characterNames := readFile $characterFile | split "\n" }}
 
 <table>
   <thead>
