@@ -9,6 +9,19 @@
 
 {{ $site := .Site }}
 
+{{ $matchedCharacters := slice }}
+
+{{ range $characters }}
+  {{ $character := . }}
+  {{ range $site.RegularPages }}
+    {{ $content := .Content }}
+    {{ if in $content $character }}
+      {{ $matchedCharacters = $matchedCharacters | append $character }}
+      {{ printf "Match found for character '%s' in file '%s'" $character .RelPermalink | println }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 <table>
   <thead>
     <tr>
@@ -17,14 +30,13 @@
     </tr>
   </thead>
   <tbody>
-    {{ range $characters }}
+    {{ range $matchedCharacters }}
       {{ $character := . }}
       {{ $characterFiles := slice }}
       {{ range $site.RegularPages }}
-        {{ $content := .Plain }}
+        {{ $content := .Content }}
         {{ if in $content $character }}
           {{ $characterFiles = $characterFiles | append . }}
-          {{ printf "Match found for character '%s' in file '%s'" $character .RelPermalink | println }}
         {{ end }}
       {{ end }}
       <tr>
