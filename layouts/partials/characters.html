@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     {{ range $characterNames }}
-      {{ $character := . | trim }}
+      {{ $character := trim . " \t" }}
       {{ $sanitizedName := printf "<script>document.write(sanitizeName('%s'));</script>" $character | safeJS }}
       {{ $sanitizedName = delimit (slice $sanitizedName) "" }}
 
