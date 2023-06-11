@@ -31,14 +31,14 @@
     </tr>
   </thead>
   <tbody>
-    {{ range $characterFiles }}
+    {{ range $characters }}
+      {{ $character := . }}
       <tr>
-        <td>{{ . }}</td>
+        <td>{{ $character }}</td>
         <td>
-          {{ $matchingFiles := where $site.RegularPages "Params.Character" . }}
-          {{ range $matchingFiles }}
-            {{ $file := . }}
-            <a href="{{ $file.RelPermalink }}">{{ $file.Title }}</a><br>
+          {{ $characterFiles := where $site.RegularPages "Params.Character" $character }}
+          {{ range $characterFiles }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
           {{ end }}
         </td>
       </tr>
