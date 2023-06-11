@@ -27,7 +27,7 @@
         <td>
           {{ $characterFiles := slice }}
           {{ range $site.RegularPages }}
-            {{ $content := .Content | safeHTML }}
+            {{ $content := .Plain }}
             {{ $matchingFiles := where $content  "Content" "intersect" (slice $character) }}
             {{ $characterFiles = $characterFiles | append $matchingFiles }}
           {{ end }}
