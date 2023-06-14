@@ -9,10 +9,11 @@
     {{partial "header.html" .}}
     <article>
         {{partial "toc.html" .}}
-        {{partial "textprocessing.html" . }}
+        {{partial "characterSearch.html" .}}
+        {{partial "textprocessing.html" .}}
         {{partial "listmd.html" .}}
         {{if $.Site.Data.config.enableRecentNotes}}
-          {{partial "recent.html" . }}
+          {{partial "recent.html" .}}
         {{end}}
     </article>
     {{partial "footerIndex.html" .}}
