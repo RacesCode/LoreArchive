@@ -10,3 +10,4 @@ linkmap
 content/.py
 content/messages.json
 *!ignore.md
+python/
