@@ -1,53 +1,25 @@
-function populateDropdown() {
-  const dropdown = document.getElementById("characterDropdown");
+// Read the characters.txt file and populate the dropdown options
+fetch('characters.txt')
+  .then(response => response.text())
+  .then(data => {
+    const dropdown = document.getElementById('characterDropdown');
+    const characters = data.split('\n');
 
-  fetch("characters.txt")
-      .then(response => response.text())
-      .then(data => {
-          const characters = data.split("\n");
-          characters.forEach(character => {
-              const option = document.createElement("option");
-              option.value = character.trim();
-              option.textContent = character.trim();
-              dropdown.appendChild(option);
-          });
-      })
-      .catch(error => {
-          console.error("Error occurred while fetching data:", error);
-      });
+    characters.forEach(character => {
+      const option = document.createElement('option');
+      option.text = character;
+      dropdown.add(option);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching characters:', error);
+  });
+
+// Function to handle the selection change
+function handleSelectionChange() {
+  const selectedCharacter = document.getElementById('characterDropdown').value;
+  
+  // TODO: Implement code to filter and display relevant .md files based on the selected character
+  // You can use the 'selectedCharacter' variable to get the selected character value
+  // and perform the necessary filtering and rendering of the .md files.
 }
-
-function searchFiles() {
-  const characterName = document.getElementById("characterDropdown").value;
-  const resultsContainer = document.getElementById("results");
-  resultsContainer.innerHTML = "";
-
-  fetch("characters.txt")
-      .then(response => response.text())
-      .then(data => {
-          const characters = data.split("\n");
-          const filesWithCharacter = characters.filter(character => character.trim() === characterName);
-
-          if (filesWithCharacter.length === 0) {
-              resultsContainer.innerHTML = "No files found.";
-          } else {
-              const ul = document.createElement("ul");
-              filesWithCharacter.forEach(filename => {
-                  const li = document.createElement("li");
-                  const link = document.createElement("a");
-                  link.href = "content/notes/" + filename;
-                  link.textContent = filename;
-                  li.appendChild(link);
-                  ul.appendChild(li);
-              });
-              resultsContainer.appendChild(ul);
-          }
-      })
-      .catch(error => {
-          resultsContainer.innerHTML = "Error occurred while fetching data.";
-          console.error("Error occurred while fetching data:", error);
-      });
-}
-
-// Call the function to populate the dropdown when the page loads
-window.addEventListener("DOMContentLoaded", populateDropdown);
